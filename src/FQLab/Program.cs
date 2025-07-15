@@ -4,6 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        if (InputHandler.TryOpenAudioStream("test.mp3", out var stream))
+        {
+            using (stream)
+            {
+                int frameSize = 1024;
+                AudioFrame? frame;
+                while ((frame = stream.ReadFrame(frameSize)) != null)
+                {
+                    
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error decoding file");
+        }
     }
 }
