@@ -1,4 +1,5 @@
 using System.Numerics;
+using NAudio.Wave;
 
 namespace FQLab;
 
@@ -23,6 +24,10 @@ public interface IAudioStream : IDisposable
     AudioFrame? ReadFrame(int size);
 }
 
+public interface IAudioReader : ISampleProvider, IDisposable
+{
+    AudioFormat Format { get; }
+}
 public interface IAudioPlugin
 {
     

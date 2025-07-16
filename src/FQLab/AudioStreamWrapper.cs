@@ -6,9 +6,9 @@ public class AudioStreamWrapper : IAudioStream
 {
     public AudioFormat Format { get; }
 
-    private readonly AudioFileReader _reader;
+    private readonly IAudioReader _reader;
 
-    public AudioStreamWrapper(AudioFormat format, AudioFileReader reader)
+    public AudioStreamWrapper(AudioFormat format, IAudioReader reader)
     {
         Format = format;
         _reader = reader;

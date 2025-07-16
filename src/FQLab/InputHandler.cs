@@ -8,7 +8,9 @@ public static class InputHandler
     {
         try
         {
-            using var reader = new AudioFileReader(audioFilePath);
+            // Future plan to change Reader based on OS
+            // Enabled by using IAudioReader
+            using var reader = new NAudioReaderAdapter(audioFilePath);
             var format = new AudioFormat(reader.WaveFormat.SampleRate, reader.WaveFormat.Channels);
 
             audioStream = new AudioStreamWrapper(format, reader);
