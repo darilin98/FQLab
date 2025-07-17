@@ -11,7 +11,7 @@ interface IAudioPlayer
 interface IFftProcessor
 {
     public Complex[] Forward(AudioFrame audioFrame);
-    public AudioFrame Inverse(Complex[] freqBins);
+    public AudioFrame Inverse(Complex[] freqBins, AudioFormat format);
     
 }
 

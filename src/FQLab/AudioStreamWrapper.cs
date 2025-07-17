@@ -31,7 +31,7 @@ public class AudioStreamWrapper : IAudioStream
             Array.Resize(ref buffer, sampleCount);
         }
 
-        return new AudioFrame(buffer);
+        return new AudioFrame(buffer, Format);
     }
     
     public void Dispose()
