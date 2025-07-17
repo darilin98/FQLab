@@ -2,18 +2,15 @@
 
 class Program
 {
+    private static string _testFilePath = "C:\\Users\\Darek\\MFF-PROJS\\FQLab\\testaudio\\lazychill.mp3";
     static void Main(string[] args)
     {
-        if (InputHandler.TryOpenAudioStream("test.mp3", out var stream))
+        if (InputHandler.TryOpenAudioStream(_testFilePath, out var stream))
         {
             using (stream)
             {
-                int frameSize = 1024;
-                AudioFrame? frame;
-                while ((frame = stream.ReadFrame(frameSize)) != null)
-                {
-                    
-                }
+                var audioEngine = new AudioEngine(stream, null, null);
+                audioEngine.Run();
             }
         }
         else
