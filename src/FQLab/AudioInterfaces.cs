@@ -5,16 +5,13 @@ namespace FQLab;
 
 interface IAudioPlayer
 {
-    
+    public void Play(AudioFrame audioFrame);
 }
 
 interface IFftProcessor
 {
-    
-}
-
-interface IAudioSource
-{
+    public Complex[] Forward(AudioFrame audioFrame);
+    public AudioFrame Inverse(Complex[] freqBins);
     
 }
 
