@@ -3,14 +3,15 @@
 class Program
 {
     private static string _testFilePath = "C:\\Users\\Darek\\MFF-PROJS\\FQLab\\testaudio\\lazychill.mp3";
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         if (InputHandler.TryOpenAudioStream(_testFilePath, out var stream))
         {
             using (stream)
             {
-                var audioEngine = new AudioEngine(stream, null, null);
+                var audioEngine = new AudioEngine(stream, new MockAudioPlayer(), new MathNetFftProcessor());
                 audioEngine.Run();
+                await Task.WhenAll(audioEngine.Tasks);
             }
         }
         else

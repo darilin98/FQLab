@@ -11,9 +11,11 @@ public class AudioEngine
 
     private const int frameSize = 1024;
 
-    private BlockingCollection<AudioFrame> frameBuffer = new BlockingCollection<AudioFrame>();
+    private BlockingCollection<AudioFrame> frameBuffer = new BlockingCollection<AudioFrame>(32);
     private Task _producerTask;
     private Task _consumerTask;
+
+    public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private bool playing = false;
     internal AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor)
@@ -25,9 +27,9 @@ public class AudioEngine
 
     public void Run()
     {
-        var cancellationToken = new CancellationToken();
-        _producerTask = Task.Run(() => AudioProducerProcess(cancellationToken));
-        _consumerTask = Task.Run(() => AudioConsumerProcess(cancellationToken));
+        var cancellationToken = new CancellationTokenSource();
+        _producerTask = Task.Run(() => AudioProducerProcess(cancellationToken.Token));
+        _consumerTask = Task.Run(() => AudioConsumerProcess(cancellationToken.Token));
     }
 
     public void Pause()
@@ -62,7 +64,7 @@ public class AudioEngine
 
     private void AudioConsumerProcess(CancellationToken token)
     {
-        foreach (var frame in frameBuffer)
+        foreach (var frame in frameBuffer.GetConsumingEnumerable(token))
         {
             _audioPlayer.Play(frame);
         }
