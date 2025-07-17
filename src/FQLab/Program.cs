@@ -9,7 +9,7 @@ class Program
         {
             using (stream)
             {
-                var audioEngine = new AudioEngine(stream, new MockAudioPlayer(), new MathNetFftProcessor());
+                var audioEngine = new AudioEngine(stream, new NAudioPlayer(), new MathNetFftProcessor());
                 audioEngine.Run();
                 await Task.WhenAll(audioEngine.Tasks);
             }
