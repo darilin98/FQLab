@@ -9,7 +9,7 @@ public class AudioEngine
     private readonly IFftProcessor _fftProcessor;
     private readonly IAudioPlayer _audioPlayer;
 
-    private const int frameSize = 1024;
+    private const int FrameSize = 1024;
 
     private BlockingCollection<AudioFrame> frameBuffer = new BlockingCollection<AudioFrame>(32);
     private Task _producerTask;
@@ -23,6 +23,8 @@ public class AudioEngine
         _audioStream = audioStream;
         _audioPlayer = audioPlayer;
         _fftProcessor = fftProcessor;
+        
+        _audioPlayer.Initialize(_audioStream);
     }
 
     public void Run()
@@ -46,7 +48,7 @@ public class AudioEngine
     {
         while (!token.IsCancellationRequested)
         {
-            var frame = _audioStream.ReadFrame(frameSize);
+            var frame = _audioStream.ReadFrame(FrameSize);
             
             if (frame is null)
                 break;

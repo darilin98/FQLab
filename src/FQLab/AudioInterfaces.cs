@@ -5,6 +5,7 @@ namespace FQLab;
 
 interface IAudioPlayer
 {
+    public void Initialize(IAudioStream audioStream);
     public void Play(AudioFrame audioFrame);
 }
 
