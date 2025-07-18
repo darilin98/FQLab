@@ -18,7 +18,7 @@ public class AudioEngine
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private bool playing = false;
-    internal AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor)
+    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor)
     {
         _audioStream = audioStream;
         _audioPlayer = audioPlayer;

@@ -3,16 +3,16 @@ using NAudio.Wave;
 
 namespace FQLab;
 
-interface IAudioPlayer
+public interface IAudioPlayer
 {
-    public void Initialize(IAudioStream audioStream);
-    public void Play(AudioFrame audioFrame);
+    void Initialize(IAudioStream audioStream);
+    void Play(AudioFrame audioFrame);
 }
 
-interface IFftProcessor
+public interface IFftProcessor
 {
-    public Complex[] Forward(AudioFrame audioFrame);
-    public AudioFrame Inverse(Complex[] freqBins, AudioFormat format);
+    Complex[] Forward(AudioFrame audioFrame);
+    AudioFrame Inverse(Complex[] freqBins, AudioFormat format);
     
 }
 
@@ -31,7 +31,7 @@ public interface IAudioPlugin
     
 }
 
-interface IFreqDataReceiver
+public interface IFreqDataReceiver
 {
-    public void ReceiveFrequencyData(Complex[] freqBins);
+    void ReceiveFrequencyData(Complex[] freqBins);
 }

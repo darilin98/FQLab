@@ -1,6 +1,6 @@
 namespace FQLab;
 
-public class MockAudioPlayer : IAudioPlayer
+public class LoggerAudioPlayer : IAudioPlayer
 {
     public void Initialize(IAudioStream audioStream)
     {
