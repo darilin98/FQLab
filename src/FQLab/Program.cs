@@ -1,22 +1,18 @@
-﻿namespace FQLab;
+﻿using System.Net.Mime;
+using Terminal.Gui.App;
+using Terminal.Gui.ViewBase;
+using Terminal.Gui.Views;
+
+namespace FQLab;
 
 class Program
 {
-    private static string _testFilePath = "C:\\Users\\Darek\\MFF-PROJS\\FQLab\\testaudio\\lazychill.mp3";
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
-        if (InputHandler.TryOpenAudioStream(_testFilePath, out var stream))
-        {
-            using (stream)
-            {
-                var audioEngine = new AudioEngine(stream, new NAudioPlayer(), new MathNetFftProcessor());
-                audioEngine.Run();
-                await Task.WhenAll(audioEngine.Tasks);
-            }
-        }
-        else
-        {
-            Console.WriteLine("Error decoding file");
-        }
+        Application.Shutdown();
+        Application.Init();
+        Application.Run(new InputSelectWindow(new UIController()));
+        
+        Application.Shutdown ();
     }
 }
