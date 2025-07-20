@@ -35,3 +35,8 @@ public interface IFreqDataReceiver
 {
     void ReceiveFrequencyData(Complex[] freqBins);
 }
+
+public interface IAudioEngineFactory
+{
+    AudioEngine Create(IAudioStream audioStream);
+}

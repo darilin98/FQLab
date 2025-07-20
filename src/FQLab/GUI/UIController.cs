@@ -3,6 +3,12 @@ namespace FQLab;
 public class UIController
 {
     private Task? _playbackTask;
+    private readonly IAudioEngineFactory _engineFactory;
+
+    public UIController(IAudioEngineFactory engineFactory)
+    {
+        _engineFactory = engineFactory;
+    }
     
     public bool TryPlayFile(string filePath)
     {
@@ -21,7 +27,7 @@ public class UIController
     {
         using (audioStream)
         {
-            var audioEngine = new AudioEngine(audioStream, new NAudioPlayer(), new MathNetFftProcessor());
+            var audioEngine = _engineFactory.Create(audioStream);
             audioEngine.Run();
             await Task.WhenAll(audioEngine.Tasks);
         }
