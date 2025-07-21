@@ -26,12 +26,7 @@ public class InputSelectWindow : Window
 
         playBtn.Accepting += (s, e) =>
         {
-            if (_controller.TryPlayFile(_testFilePath))
-            {
-                MessageBox.Query("Decoding file", "Decoding successful", "Play");
-                Application.Run<PlayingWindow>().Dispose();
-            }
-            else
+            if (!_controller.TryPlayFile(_testFilePath))
             {
                 MessageBox.ErrorQuery("Decoding file", "Error file could not be decoded", "OK");
             }

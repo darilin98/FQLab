@@ -11,7 +11,11 @@ class Program
     {
         Application.Shutdown();
         Application.Init();
-        Application.Run(new InputSelectWindow(new UIController(new AudioEngineFactory())));
+
+        var controller = new UIController(new AudioEngineFactory());
+        var inputWin = new InputSelectWindow(controller);
+
+        Application.Run(inputWin);
         
         Application.Shutdown ();
     }
