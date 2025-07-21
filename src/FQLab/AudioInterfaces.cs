@@ -38,5 +38,5 @@ public interface IFreqDataReceiver
 
 public interface IAudioEngineFactory
 {
-    AudioEngine Create(IAudioStream audioStream);
+    AudioEngineFactoryResult Create(IAudioStream audioStream, bool withDataExport = false);
 }

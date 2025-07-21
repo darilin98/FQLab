@@ -1,3 +1,6 @@
+using System.Net.Mime;
+using Terminal.Gui.App;
+
 namespace FQLab;
 
 public class UIController
@@ -15,7 +18,6 @@ public class UIController
         
         if (InputHandler.TryOpenAudioStream(filePath, out var stream))
         {
-
             _playbackTask = Task.Run(() => StartPlayback(stream));
             return true;
         }
@@ -27,8 +29,12 @@ public class UIController
     {
         using (audioStream)
         {
-            var audioEngine = _engineFactory.Create(audioStream);
+            var response = _engineFactory.Create(audioStream, withDataExport: true);
+            var audioEngine = response.AudioEngine;
+            var playingWindow = new PlayingWindow(this, response.View);
+            
             audioEngine.Run();
+            Application.Run(playingWindow);
             await Task.WhenAll(audioEngine.Tasks);
         }
     }

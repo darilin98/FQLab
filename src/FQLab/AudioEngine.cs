@@ -9,6 +9,9 @@ public class AudioEngine
     private readonly IFftProcessor _fftProcessor;
     private readonly IAudioPlayer _audioPlayer;
 
+    // Optional for rendering audio data
+    private readonly IFreqDataReceiver? _dataReceiver;
+
     private const int FrameSize = 1024;
 
     private BlockingCollection<AudioFrame> frameBuffer = new BlockingCollection<AudioFrame>(32);
@@ -18,11 +21,12 @@ public class AudioEngine
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private bool playing = false;
-    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor)
+    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null)
     {
         _audioStream = audioStream;
         _audioPlayer = audioPlayer;
         _fftProcessor = fftProcessor;
+        _dataReceiver = dataReceiver;
         
         _audioPlayer.Initialize(_audioStream);
     }
@@ -55,10 +59,13 @@ public class AudioEngine
 
             // FFT Processing
             var freqBins = _fftProcessor.Forward(frame);
+            
+            if (_dataReceiver is not null)
+                _dataReceiver.ReceiveFrequencyData(new FreqViewData(freqBins, _audioStream.Format, FrameSize));
 
             var resultFrame = _fftProcessor.Inverse(freqBins, _audioStream.Format);
             
-            frameBuffer.Add(frame, token);
+            frameBuffer.Add(resultFrame, token);
         }
         
         frameBuffer.CompleteAdding();

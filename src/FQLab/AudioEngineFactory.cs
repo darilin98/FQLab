@@ -1,10 +1,11 @@
 using System.Runtime.InteropServices;
+using Terminal.Gui.ViewBase;
 
 namespace FQLab;
 
 public class AudioEngineFactory : IAudioEngineFactory
 {
-    public AudioEngine Create(IAudioStream audioStream)
+    public AudioEngineFactoryResult Create(IAudioStream audioStream, bool withDataExport = false)
     {
         IAudioPlayer? player;
         IFftProcessor fftProcessor = new MathNetFftProcessor();
@@ -19,6 +20,14 @@ public class AudioEngineFactory : IAudioEngineFactory
             player = null;
         }
 
-        return new AudioEngine(audioStream, player, fftProcessor);
+        if (withDataExport)
+        {
+            var view = new FreqSpectrumView() { Width = Dim.Fill(),
+                Height = Dim.Fill(),};
+            IFreqDataReceiver receiver = new FreqViewDataProcessor(view);
+            return new AudioEngineFactoryResult(new AudioEngine(audioStream, player, fftProcessor, receiver), view);
+        }
+        
+        return new AudioEngineFactoryResult(new AudioEngine(audioStream, player, fftProcessor));
     }
 }
