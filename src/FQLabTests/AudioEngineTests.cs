@@ -52,6 +52,15 @@ internal class MockFftProcessor : IFftProcessor
     }
 }
 
+internal class MockFreqDataReceiver : IFreqDataReceiver
+{
+    public List<Complex[]> Result { get; } = new();
+    public void ReceiveFrequencyData(FreqViewData viewData)
+    {
+        Result.Add(viewData.FreqBins);
+    }
+}
+
 public class AudioEngineTests
 {
     [Theory]
@@ -72,5 +81,30 @@ public class AudioEngineTests
         // Assert
         Assert.Equal(stream.TotalSamples, player.Result.Count);
 
+    }
+
+    [Fact]
+
+    public async Task ExportsDataToReceiver()
+    {
+        // Arrange
+        var player = new MockAudioPlayer();
+        var stream = new MockAudioStream(4096);
+        var receiver = new MockFreqDataReceiver();
+        var engine = new AudioEngine(stream, player, new MathNetFftProcessor(), receiver);
+        
+        // Act
+        engine.Run();
+        await Task.WhenAll(engine.Tasks);
+
+        // Assert
+        Assert.Equal(4096, player.Result.Count); 
+        Assert.Equal(4096, receiver.Result.Count);
+
+        Assert.All(receiver.Result, bins =>
+        {
+            Assert.NotNull(bins);
+            Assert.Equal(2 * 1024, bins.Length); 
+        });
     }
 }
