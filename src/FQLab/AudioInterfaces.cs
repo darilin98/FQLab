@@ -33,7 +33,7 @@ public interface IAudioPlugin
 
 public interface IFreqDataReceiver
 {
-    void ReceiveFrequencyData(Complex[] freqBins);
+    void ReceiveFrequencyData(FreqViewData viewData);
 }
 
 public interface IAudioEngineFactory
