@@ -15,3 +15,11 @@ public class LoggerAudioPlayer : IAudioPlayer
         }
     }
 }
+
+public static class Logger
+{
+    public static void Log(string message)
+    {
+        File.AppendAllText("debug.log", $"[{DateTime.Now}] {message} \n");
+    }
+}
