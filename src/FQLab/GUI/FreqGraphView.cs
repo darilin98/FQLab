@@ -35,6 +35,9 @@ public class FreqGraphView : View
         int height = Frame.Height;
         int width = Frame.Width;
 
+        if (height == 0 || width == 0)
+            return false;
+
         for (int column = 0; column < _magnitudes.Length && column < width; column++)
         {
             double magnitude = _magnitudes[column];

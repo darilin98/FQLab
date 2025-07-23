@@ -10,9 +10,6 @@ public class FreqViewDataProcessor : IFreqDataReceiver
     private static readonly double LogMin = Math.Log10(20);
     private static readonly double LogMax = Math.Log10(20000);
 
-    private readonly object magLock = new();
-    private double[] _magnitudes = [];
-
     private int _cachedWidth = 0;
     private List<(int start, int end)> _binRanges = new();
     
