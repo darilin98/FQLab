@@ -92,6 +92,9 @@ public class AudioEngineTests
         var stream = new MockAudioStream(4096);
         var receiver = new MockFreqDataReceiver();
         var engine = new AudioEngine(stream, player, new MathNetFftProcessor(), receiver);
+
+        int hopSize = 512;
+        int channels = 2;
         
         // Act
         engine.Run();
@@ -104,7 +107,7 @@ public class AudioEngineTests
         Assert.All(receiver.Result, bins =>
         {
             Assert.NotNull(bins);
-            Assert.Equal(2 * 1024, bins.Length); 
+            Assert.Equal(channels * hopSize, bins.Length); 
         });
     }
 }
