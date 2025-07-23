@@ -6,9 +6,11 @@ namespace FQLab;
 public class FreqGraphView : View
 {
     private double[] _magnitudes = [];
+    private double[] _trails = [];
     
     private const double MinMagnitude = 1e-10;
     private const double DecayFactor = 0.98;
+    private const double TrailDecay = 0.90;
     private double _smoothedMax = 1.0;
 
     public void UpdateData(double[] magnitudes)
@@ -21,6 +23,11 @@ public class FreqGraphView : View
             return;
 
         _smoothedMax = Math.Max(frameMax, _smoothedMax * DecayFactor);
+        
+        if (_trails.Length != magnitudes.Length)
+        {
+            _trails = new double[magnitudes.Length];
+        }
         
         _magnitudes = magnitudes;
         
@@ -52,12 +59,22 @@ public class FreqGraphView : View
             int blocks = (int)(norm * height);
             blocks = Math.Clamp(blocks, 0, height);
             int startRow = height - blocks;
-
+            
             for (int row = startRow; row < height; row++)
             {
                 Move(column, row);
-                Application.Driver.AddRune('\u2588');
+                Application.Driver.AddRune('\u2588'); // full block
             }
+            
+            _trails[column] = Math.Max(_trails[column] * TrailDecay, norm);
+            int trailHeight = (int)(_trails[column] * height);
+            trailHeight = Math.Clamp(trailHeight, 0, height);
+            for (int row = height - trailHeight; row < height - blocks; row++)
+            {
+                Move(column, row);
+                Application.Driver.AddRune('\u2592'); // medium shade block for trail
+            }
+            
         }
         return true;
     }
