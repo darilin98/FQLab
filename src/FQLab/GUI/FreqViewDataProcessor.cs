@@ -13,6 +13,9 @@ public class FreqViewDataProcessor : IFreqDataReceiver
     private readonly object magLock = new();
     private double[] _magnitudes = [];
 
+    private int _cachedWidth = 0;
+    private List<(int start, int end)> _binRanges = new();
+    
     public FreqViewDataProcessor(FreqSpectrumView spectrumView)
     {
         _spectrumView = spectrumView;
@@ -20,7 +23,8 @@ public class FreqViewDataProcessor : IFreqDataReceiver
         {
             lock (magLock)
             {
-                _spectrumView.UpdateData(_magnitudes);
+                if (_magnitudes.Length != 0)
+                    _spectrumView.UpdateData(_magnitudes);
             }
             return true;
         });
@@ -34,9 +38,7 @@ public class FreqViewDataProcessor : IFreqDataReceiver
         }
         
     }
-
-    private int _cachedWidth = 0;
-    private List<(int start, int end)> _binRanges = new();
+    
     private double[] CalculateLogFreqBuckets(FreqViewData viewData)
     {
         int numGraphColumns = _spectrumView.Frame.Width;
@@ -68,7 +70,9 @@ public class FreqViewDataProcessor : IFreqDataReceiver
             double mag = 0;
             for (int b = startBin; b <= endBin; b++)
             {
-                mag += viewData.FreqBins[b].Magnitude;
+                // Try to limit impact of lower ranges on the graph
+                double perceptualWeight = Math.Sqrt(b + 1);
+                mag += perceptualWeight * viewData.FreqBins[b].Magnitude;
             }
             result[i] = mag / (endBin - startBin + 1);
         }
