@@ -9,56 +9,31 @@ namespace FQLab;
 public class FreqSpectrumView : View
 {
 
-    private double[] _magnitudes = [];
+    private readonly FreqGraphView _graphView;
+    private readonly FreqAxisView _axisView;
+    public FreqSpectrumView()
+    {
+        Width = Dim.Fill();
+        Height = Dim.Fill();
 
-    private const double MinMagnitude = 1e-10;
-    private const double DecayFactor = 0.98;
-    private double _smoothedMax = 1.0;
+        _graphView = new FreqGraphView();
+        _axisView = new FreqAxisView();
+        
+        _graphView.X = 0;
+        _graphView.Y = 0;
+        _graphView.Width = Dim.Fill();
+        _graphView.Height = Dim.Fill() - 1;
+
+        _axisView.X = 0;
+        _axisView.Y = Pos.Bottom(_graphView);
+        _axisView.Width = Dim.Fill();
+        _axisView.Height = 1;
+
+        Add(_graphView, _axisView);
+    }
     public void UpdateData(double[] magnitudes)
     {
-        if (magnitudes.Length == 0)
-            return;
-        
-        var frameMax = magnitudes.Max();
-        if (double.IsNaN(frameMax) || double.IsInfinity(frameMax) || frameMax <= 0)
-            return;
-
-        _smoothedMax = Math.Max(frameMax, _smoothedMax * DecayFactor);
-        
-        _magnitudes = magnitudes;
-        
-        SetNeedsDraw();
-    }
-
-    protected override bool OnDrawingContent(DrawContext? drawContext)
-    {
-        if (_magnitudes.Length == 0 || _smoothedMax <= 0)
-            return false;
-        
-        int height = Frame.Height;
-        int width = Frame.Width;
-
-        for (int column = 0; column < _magnitudes.Length && column < width; column++)
-        {
-            double magnitude = _magnitudes[column];
-
-            if (double.IsNaN(magnitude) || double.IsInfinity(magnitude) || magnitude <= 0)
-                continue;
-
-            double norm = magnitude / (_smoothedMax + MinMagnitude);
-            norm = Math.Clamp(norm, 0, 1);
-            norm = Math.Pow(norm, 0.8); 
-
-            int blocks = (int)(norm * height);
-            blocks = Math.Clamp(blocks, 0, height);
-            int startRow = height - blocks;
-
-            for (int row = startRow; row < height; row++)
-            {
-                Move(column, row);
-                Application.Driver.AddRune('\u2588');
-            }
-        }
-        return true;
+        _graphView.UpdateData(magnitudes);
+        _axisView.UpdateLabels(Frame.Width);
     }
 }

@@ -22,8 +22,7 @@ public class AudioEngineFactory : IAudioEngineFactory
 
         if (withDataExport)
         {
-            var view = new FreqSpectrumView() { Width = Dim.Fill(),
-                Height = Dim.Fill(),};
+            var view = new FreqSpectrumView();
             IFreqDataReceiver receiver = new FreqViewDataProcessor(view);
             return new AudioEngineFactoryResult(new AudioEngine(audioStream, player, fftProcessor, receiver), view);
         }
