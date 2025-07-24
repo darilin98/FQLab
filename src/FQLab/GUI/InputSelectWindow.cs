@@ -11,7 +11,7 @@ public class InputSelectWindow : Window
     private UIController _controller;
     public InputSelectWindow(UIController controller)
     {
-        Title = $"FQLab - select valid audio file";
+        Title = $"FQLab - The spectral playground";
 
         _controller = controller;
 

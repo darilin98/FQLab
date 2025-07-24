@@ -1,5 +1,5 @@
-using System.Net.Mime;
 using Terminal.Gui.App;
+using Terminal.Gui.Views;
 
 namespace FQLab;
 
@@ -33,9 +33,11 @@ public class UIController
             var audioEngine = response.AudioEngine;
             var playingWindow = new PlayingWindow(this, response.View);
             
+            
+            Application.Top?.Add(playingWindow);
             audioEngine.Run();
-            Application.Run(playingWindow);
             await Task.WhenAll(audioEngine.Tasks);
+            Application.Top.Remove(playingWindow);
         }
     }
 }

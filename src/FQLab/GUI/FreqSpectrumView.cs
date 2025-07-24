@@ -3,11 +3,13 @@ using System.Numerics;
 using MathNet.Numerics.Interpolation;
 using NAudio.Wave.Compression;
 using Terminal.Gui.App;
+using Terminal.Gui.Drawing;
 using Terminal.Gui.ViewBase;
+using Terminal.Gui.Views;
 
 namespace FQLab;
 
-public class FreqSpectrumView : View
+public class FreqSpectrumView : FrameView
 {
 
     private readonly FreqGraphView _graphView;
@@ -16,8 +18,8 @@ public class FreqSpectrumView : View
     private bool _isReady = false;
     public FreqSpectrumView()
     {
-        Width = Dim.Fill();
-        Height = Dim.Fill();
+        Width = Dim.Percent(90);
+        Height = Dim.Percent(75);
 
         _graphView = new FreqGraphView();
         _axisView = new FreqAxisView();
@@ -31,6 +33,8 @@ public class FreqSpectrumView : View
         _axisView.Y = Pos.Bottom(_graphView);
         _axisView.Width = Dim.Fill();
         _axisView.Height = 1;
+
+        Border.LineStyle = LineStyle.Dotted;
 
         Add(_graphView, _axisView);
     }
