@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Numerics;
 using MathNet.Numerics.Interpolation;
 using NAudio.Wave.Compression;
@@ -11,6 +12,8 @@ public class FreqSpectrumView : View
 
     private readonly FreqGraphView _graphView;
     private readonly FreqAxisView _axisView;
+
+    private bool _isReady = false;
     public FreqSpectrumView()
     {
         Width = Dim.Fill();
@@ -31,9 +34,22 @@ public class FreqSpectrumView : View
 
         Add(_graphView, _axisView);
     }
+    
+    protected override void OnFrameChanged(in Rectangle frame)
+    {
+        base.OnFrameChanged(frame);
+        
+        if (!_isReady && Frame.Width > 0 && Frame.Height > 0)
+            _isReady = true;
+    }
+    
     public void UpdateData(double[] magnitudes)
     {
-        _graphView.UpdateData(magnitudes);
-        _axisView.UpdateLabels(Frame.Width);
+        if (_isReady)
+        {
+            _graphView.UpdateData(magnitudes);
+            _axisView.UpdateLabels(Frame.Width);
+        }
     }
+    
 }

@@ -18,6 +18,9 @@ public class FreqAxisView : View
             int col = (int)(position * Frame.Width);
             _labels.Add((col, freq >= 1000 ? $"{freq / 1000}k" : freq.ToString()));
         }
+        if (Frame.Height == 0 || Frame.Width == 0)
+            return;
+        
         SetNeedsDraw();
     }
 

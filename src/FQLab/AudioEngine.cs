@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
 using System.IO.Enumeration;
 using System.Numerics;
+using Terminal.Gui.App;
 
 namespace FQLab;
 
@@ -84,7 +85,10 @@ public class AudioEngine
             var freqBins = _fftProcessor.Forward(new AudioFrame(monoInput, _audioStream.Format));
             
             // Export frequency data
-            _dataReceiver?.ReceiveFrequencyData(new FreqViewData(freqBins, _audioStream.Format, FrameSize));
+            Application.Invoke(() =>
+            {
+                _dataReceiver?.ReceiveFrequencyData(new FreqViewData(freqBins, _audioStream.Format, FrameSize));
+            });
             
             var ifftFrame = _fftProcessor.Inverse(freqBins, _audioStream.Format);
             

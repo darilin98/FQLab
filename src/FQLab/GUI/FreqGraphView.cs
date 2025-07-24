@@ -31,6 +31,9 @@ public class FreqGraphView : View
         
         _magnitudes = magnitudes;
         
+        if (_magnitudes.Length != Frame.Width || Frame.Height == 0 || Frame.Width == 0)
+            return;
+        
         SetNeedsDraw();
     }
 
@@ -42,10 +45,12 @@ public class FreqGraphView : View
         int height = Frame.Height;
         int width = Frame.Width;
 
-        if (_magnitudes.Length != Frame.Width || height == 0 || width == 0)
+        if ( height == 0 || width == 0)
             return true;
 
-        for (int column = 0; column < _magnitudes.Length && column < width; column++)
+        int safeLen = Math.Min(_magnitudes.Length, Frame.Width);
+        
+        for (int column = 0; column < safeLen; column++)
         {
             double magnitude = _magnitudes[column];
 

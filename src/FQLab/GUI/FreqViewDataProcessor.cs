@@ -19,7 +19,7 @@ public class FreqViewDataProcessor : IFreqDataReceiver
     public FreqViewDataProcessor(FreqSpectrumView spectrumView)
     {
         _spectrumView = spectrumView;
-        Application.AddTimeout(TimeSpan.FromMilliseconds(15), GraphRenderCallBack);
+        Application.AddTimeout(TimeSpan.FromMilliseconds(22), GraphRenderCallBack);
     }
     
     public void ReceiveFrequencyData(FreqViewData viewData)
