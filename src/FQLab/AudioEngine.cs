@@ -17,7 +17,13 @@ public class AudioEngine
     private const int HopSize = FrameSize / 2;
 
     private readonly float[] _hannWindow = GenerateHannWindow(FrameSize);
-
+    
+    private int _channelCount;
+    private float[] _inputBuffer = [];
+    private float[] _overlapAddBuffer = [];
+    private float[] _tailBuffer = [];
+    private int _writePos = 0;
+    
     private BlockingCollection<AudioFrame> _frameBuffer = new BlockingCollection<AudioFrame>(32);
     private Task _producerTask;
     private Task _consumerTask;
@@ -55,35 +61,22 @@ public class AudioEngine
 
     private void AudioProducerProcess(CancellationToken token)
     {
-        int channelCount = _audioStream.Format.ChannelCount;
-        var inputBuffer = new float[FrameSize * channelCount];
-        var overlapAddBuffer = new float[(FrameSize + HopSize) * channelCount];
-        var tailBuffer = new float[(FrameSize - HopSize) * channelCount];
-
-        int writePos = 0;
+        _channelCount = _audioStream.Format.ChannelCount;
+        _inputBuffer = new float[FrameSize * _channelCount];
+        _overlapAddBuffer = new float[(FrameSize + HopSize) * _channelCount];
+        _tailBuffer = new float[(FrameSize - HopSize) * _channelCount];
 
         while (!token.IsCancellationRequested)
         {
             var nextFrame = _audioStream.ReadFrame(HopSize);
-            if (nextFrame is null || nextFrame.Samples.Length < HopSize * channelCount)
+            if (nextFrame is null || nextFrame.Samples.Length < HopSize * _channelCount)
                 break;
 
-            // Shift for overlap
-            Array.Copy(tailBuffer, 0, inputBuffer, 0, tailBuffer.Length);
-            Array.Copy(nextFrame.Samples, 0, inputBuffer, tailBuffer.Length, nextFrame.Samples.Length);
+            ShiftBuffers(nextFrame);
             
-            Array.Copy(inputBuffer, HopSize * channelCount, tailBuffer, 0, tailBuffer.Length);
-
-            // Mix stereo to mono
-            var monoInput = new float[FrameSize];
-            for (int i = 0; i < FrameSize; i++)
-            {
-                float sum = 0f;
-                for (int c = 0; c < channelCount; c++)
-                    sum += inputBuffer[i * channelCount + c];
-                monoInput[i] = sum / channelCount;
-            }
+            var monoInput = MixToMonoFromBuffer();
             
+            // Apply windowing
             for (int i = 0; i < FrameSize; i++)
                 monoInput[i] *= _hannWindow[i];
 
@@ -94,30 +87,12 @@ public class AudioEngine
             _dataReceiver?.ReceiveFrequencyData(new FreqViewData(freqBins, _audioStream.Format, FrameSize));
             
             var ifftFrame = _fftProcessor.Inverse(freqBins, _audioStream.Format);
-            var monoIfftSamples = ifftFrame.Samples;
-
-            // Overlap-add into stereo buffer
-            for (int i = 0; i < FrameSize; i++)
-            {
-                for (int c = 0; c < channelCount; c++)
-                {
-                    int idx = ((writePos + i) * channelCount + c) % overlapAddBuffer.Length;
-                    overlapAddBuffer[idx] += monoIfftSamples[i]; 
-                }
-            }
             
-            var output = new float[HopSize * channelCount];
-            for (int i = 0; i < HopSize; i++)
-            {
-                for (int c = 0; c < channelCount; c++)
-                {
-                    int idx = ((writePos + i) * channelCount + c) % overlapAddBuffer.Length;
-                    output[i * channelCount + c] = overlapAddBuffer[idx];
-                    overlapAddBuffer[idx] = 0f;
-                }
-            }
+            OverlapAddToBuffer(ifftFrame.Samples);
+           
+            var output = GetOutputSamplesFromBuffer();
 
-            writePos = (writePos + HopSize) % (FrameSize + HopSize);
+            _writePos = (_writePos + HopSize) % (FrameSize + HopSize);
 
             _frameBuffer.Add(new AudioFrame(output, _audioStream.Format), token);
         }
@@ -139,5 +114,54 @@ public class AudioEngine
             window[i] = 0.5f * (1f - MathF.Cos(2 * MathF.PI * i / (size - 1)));
         return window;
     }
-    
+
+    private void ShiftBuffers(AudioFrame nextFrame)
+    {
+        Array.Copy(_tailBuffer, 0, _inputBuffer, 0, _tailBuffer.Length);
+        Array.Copy(nextFrame.Samples, 0, _inputBuffer, _tailBuffer.Length, nextFrame.Samples.Length);
+            
+        Array.Copy(_inputBuffer, HopSize * _channelCount, _tailBuffer, 0, _tailBuffer.Length);
+    }
+
+    private float[] MixToMonoFromBuffer()
+    {
+        var result = new float[FrameSize];
+        for (int i = 0; i < FrameSize; i++)
+        {
+            float sum = 0f;
+            for (int c = 0; c < _channelCount; c++)
+                sum += _inputBuffer[i * _channelCount + c];
+            result[i] = sum / _channelCount;
+        }
+
+        return result;
+    }
+
+    private void OverlapAddToBuffer(float[] monoIfftSamples)
+    {
+        for (int i = 0; i < FrameSize; i++)
+        {
+            for (int c = 0; c < _channelCount; c++)
+            {
+                int idx = ((_writePos + i) * _channelCount + c) % _overlapAddBuffer.Length;
+                _overlapAddBuffer[idx] += monoIfftSamples[i]; 
+            }
+        }
+    }
+
+    private float[] GetOutputSamplesFromBuffer()
+    {
+        var result = new float[HopSize * _channelCount];
+        for (int i = 0; i < HopSize; i++)
+        {
+            for (int c = 0; c < _channelCount; c++)
+            {
+                int idx = ((_writePos + i) * _channelCount + c) % _overlapAddBuffer.Length;
+                result[i * _channelCount + c] = _overlapAddBuffer[idx];
+                _overlapAddBuffer[idx] = 0f;
+            }
+        }
+        return result;
+    }
+
 }
