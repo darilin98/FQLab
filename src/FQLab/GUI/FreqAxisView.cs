@@ -24,11 +24,15 @@ public class FreqAxisView : View
     protected override bool OnDrawingContent(DrawContext? drawContext)
     {
         base.OnDrawingContent(drawContext);
+        
+        if (Frame.Width == 0)
+            return true;
+        
         foreach (var (col, label) in _labels)
         {
             if (col + label.Length < Frame.Width)
                 Move(col, 0);
-            Application.Driver.AddStr(label);
+            Application.Driver?.AddStr(label);
         }
 
         return true;

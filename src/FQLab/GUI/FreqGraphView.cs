@@ -37,13 +37,13 @@ public class FreqGraphView : View
     protected override bool OnDrawingContent(DrawContext? drawContext)
     {
         if (_magnitudes.Length == 0 || _smoothedMax <= 0)
-            return false;
+            return true;
         
         int height = Frame.Height;
         int width = Frame.Width;
 
-        if (height == 0 || width == 0)
-            return false;
+        if (_magnitudes.Length != Frame.Width || height == 0 || width == 0)
+            return true;
 
         for (int column = 0; column < _magnitudes.Length && column < width; column++)
         {
@@ -62,8 +62,10 @@ public class FreqGraphView : View
             
             for (int row = startRow; row < height; row++)
             {
+                if (column < 0 || column >= width || row < 0 || row >= height)
+                    continue;
                 Move(column, row);
-                Application.Driver.AddRune('\u2588'); // full block
+                Application.Driver?.AddRune('\u2588'); // full block
             }
             
             _trails[column] = Math.Max(_trails[column] * TrailDecay, norm);
@@ -71,8 +73,10 @@ public class FreqGraphView : View
             trailHeight = Math.Clamp(trailHeight, 0, height);
             for (int row = height - trailHeight; row < height - blocks; row++)
             {
+                if (column < 0 || column >= width || row < 0 || row >= height)
+                    continue;
                 Move(column, row);
-                Application.Driver.AddRune('\u2592'); // medium shade block for trail
+                Application.Driver?.AddRune('\u2592'); // medium shade block for trail
             }
             
         }

@@ -11,12 +11,18 @@ class Program
     {
         Application.Shutdown();
         Application.Init();
-
-        var controller = new UIController(new AudioEngineFactory());
-        var inputWin = new InputSelectWindow(controller);
-
-        Application.Run(inputWin);
         
-        Application.Shutdown ();
+        try
+        {
+            var controller = new UIController(new AudioEngineFactory());
+            var inputWin = new InputSelectWindow(controller);
+            Application.Run(inputWin);
+        }
+        catch (Exception e)
+        {
+            Logger.Log(e.Message);
+            Logger.Log(e.StackTrace);
+            Application.Shutdown();
+        }
     }
 }
