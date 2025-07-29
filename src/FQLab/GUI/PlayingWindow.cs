@@ -1,4 +1,5 @@
 using Terminal.Gui.Drawing;
+using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
 
 namespace FQLab;
@@ -12,8 +13,25 @@ public class PlayingWindow : Window
         _controller = controller;
 
         BorderStyle = LineStyle.None;
+        
+        freqSpectrumView.Width = Dim.Percent(80);
+        freqSpectrumView.Height = Dim.Percent(75);
 
-        Add(freqSpectrumView);
+        var controlPanelView = new ControlPanelView(controller)
+        {
+            Y = Pos.Bottom(freqSpectrumView),
+            Width = freqSpectrumView.Width,
+            Height = Dim.Fill()
+        };
+        
+        var pluginListView = new PluginListView(controller)
+        {
+            X = Pos.Right(freqSpectrumView),
+            Width = Dim.Fill(),
+            Height = Dim.Fill()
+        };
+
+        Add(freqSpectrumView, controlPanelView, pluginListView);
 
     }
 }

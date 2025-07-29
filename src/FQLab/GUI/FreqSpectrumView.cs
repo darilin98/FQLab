@@ -6,6 +6,7 @@ using Terminal.Gui.App;
 using Terminal.Gui.Drawing;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
+using Color = Terminal.Gui.Drawing.Color;
 
 namespace FQLab;
 
@@ -18,23 +19,23 @@ public class FreqSpectrumView : FrameView
     private bool _isReady = false;
     public FreqSpectrumView()
     {
-        Width = Dim.Percent(90);
-        Height = Dim.Percent(75);
+        _graphView = new FreqGraphView()
+        {
+            X = 0,
+            Y = 0,
+            Width = Dim.Fill(),
+            Height = Dim.Fill() - 1
+        };
 
-        _graphView = new FreqGraphView();
-        _axisView = new FreqAxisView();
-        
-        _graphView.X = 0;
-        _graphView.Y = 0;
-        _graphView.Width = Dim.Fill();
-        _graphView.Height = Dim.Fill() - 1;
+        _axisView = new FreqAxisView()
+        {
+            X = 0,
+            Y = Pos.Bottom(_graphView),
+            Width = Dim.Fill(),
+            Height = 1
+        };
 
-        _axisView.X = 0;
-        _axisView.Y = Pos.Bottom(_graphView);
-        _axisView.Width = Dim.Fill();
-        _axisView.Height = 1;
-
-        Border.LineStyle = LineStyle.Dotted;
+        Border.LineStyle = LineStyle.Rounded;
 
         Add(_graphView, _axisView);
     }
