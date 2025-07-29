@@ -14,6 +14,8 @@ public class AudioEngine
     // Optional for rendering audio data
     private readonly IFreqDataReceiver? _dataReceiver;
 
+    private EqSettings _eqSettings = new EqSettings();
+
     private const int FrameSize = 1024;
     private const int HopSize = FrameSize / 2;
 
@@ -39,7 +41,8 @@ public class AudioEngine
         _audioPlayer = audioPlayer;
         _fftProcessor = fftProcessor;
         _dataReceiver = dataReceiver;
-        
+
+        _eqSettings = new EqSettings() { Lows = -10, Highs = -10, Mids = 10};
         _audioPlayer.Initialize(_audioStream);
     }
 
@@ -59,6 +62,8 @@ public class AudioEngine
     {
         _cancellationTokenSource?.Cancel();
     }
+
+    public void SetEq(EqSettings settings) => _eqSettings = settings;
 
     private void AudioProducerProcess(CancellationToken token)
     {
@@ -83,6 +88,8 @@ public class AudioEngine
 
             // FFT Pipeline
             var freqBins = _fftProcessor.Forward(new AudioFrame(monoInput, _audioStream.Format));
+
+            freqBins = ApplyEq(freqBins);
             
             // Export frequency data
             Application.Invoke(() =>
@@ -166,6 +173,29 @@ public class AudioEngine
             }
         }
         return result;
+    }
+
+    private Complex[] ApplyEq(Complex[] freqBins)
+    {
+        var sampleRate = _audioStream.Format.SampleRate;
+        var binSize = sampleRate / freqBins.Length;
+
+        for (int i = 0; i < freqBins.Length; i++)
+        {
+            float freq = i * binSize;
+
+            float gain = freq switch
+            {
+                >= 20f and < 160f => _eqSettings[EqRanges.Lows],
+                >= 160f and < 1500f => _eqSettings[EqRanges.Mids],
+                >= 1500f => _eqSettings[EqRanges.Highs],
+                _ => 1f
+            };
+
+            freqBins[i] *= gain;
+        }
+
+        return freqBins;
     }
 
 }
