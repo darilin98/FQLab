@@ -5,7 +5,7 @@ using Terminal.Gui.App;
 
 namespace FQLab;
 
-public class AudioEngine
+public class AudioEngine : IDisposable
 {
     private readonly IAudioStream _audioStream;
     private readonly IFftProcessor _fftProcessor;
@@ -42,7 +42,6 @@ public class AudioEngine
         _fftProcessor = fftProcessor;
         _dataReceiver = dataReceiver;
 
-        _eqSettings = new EqSettings() { Lows = -10, Highs = -10, Mids = 10};
         _audioPlayer.Initialize(_audioStream);
     }
 
@@ -198,4 +197,20 @@ public class AudioEngine
         return freqBins;
     }
 
+    public void Dispose()
+    {
+        _cancellationTokenSource?.Cancel();
+
+        try
+        {
+            Task.WaitAll(new[] { _producerTask, _consumerTask }, TimeSpan.FromSeconds(2));
+        }
+        catch (AggregateException ex) { }
+        catch (ObjectDisposedException) { }
+
+        // Dispose resources
+        _cancellationTokenSource?.Dispose();
+        _frameBuffer?.Dispose();
+        
+    }
 }

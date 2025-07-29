@@ -8,6 +8,8 @@ public class UIController
     private Task? _playbackTask;
     private readonly IAudioEngineFactory _engineFactory;
 
+    private AudioEngine? _audioEngine;
+
     public UIController(IAudioEngineFactory engineFactory)
     {
         _engineFactory = engineFactory;
@@ -25,19 +27,27 @@ public class UIController
         return false;
     }
 
+    public void UpdateEq(EqSettings settings)
+    {
+        _audioEngine?.SetEq(settings);
+    }
+
     private async Task StartPlayback(IAudioStream audioStream)
     {
         using (audioStream)
         {
             var response = _engineFactory.Create(audioStream, withDataExport: true);
-            var audioEngine = response.AudioEngine;
-            var playingWindow = new PlayingWindow(this, response.View);
+            using (_audioEngine)
+            {
+                _audioEngine = response.AudioEngine;
+                var playingWindow = new PlayingWindow(this, response.View);
             
             
-            Application.Top?.Add(playingWindow);
-            audioEngine.Run();
-            await Task.WhenAll(audioEngine.Tasks);
-            Application.Top.Remove(playingWindow);
+                Application.Top?.Add(playingWindow);
+                _audioEngine.Run();
+                await Task.WhenAll(_audioEngine.Tasks);
+                Application.Top.Remove(playingWindow);
+            }
         }
     }
 }

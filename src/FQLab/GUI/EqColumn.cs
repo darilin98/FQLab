@@ -1,3 +1,4 @@
+using Terminal.Gui.Drawing;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
 
@@ -11,7 +12,7 @@ public class EqColumn : View
 
     private View _valueDisplay;
 
-    public event Action<EqRanges, int>? ValChanged;
+    public event Action? ValChanged;
 
     public EqColumn(EqRanges range)
     {
@@ -35,9 +36,9 @@ public class EqColumn : View
 
         _valueDisplay = new Label()
         {
-            Text = $"| {Value} |",
+            Text = $"{Value}",
             X = Pos.Center(),
-            Y = Pos.Bottom(plus) 
+            Y = Pos.Bottom(plus),
         };
 
         var minus = new Button()
@@ -66,7 +67,7 @@ public class EqColumn : View
     private void ChangeValue(int amount)
     {
         Value = Math.Clamp(Value + amount, -5, 5);
-        _valueDisplay.Text = $"| {Value} |";
-        ValChanged?.Invoke(Range, Value);
+        _valueDisplay.Text = $"{Value}";
+        ValChanged?.Invoke();
     }
 }

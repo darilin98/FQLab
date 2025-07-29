@@ -10,6 +10,8 @@ namespace FQLab;
 public class EqSelectorView : View
 {
     private UIController _controller;
+
+    private EqColumn[] _columns;
     
     public EqSelectorView(UIController controller)
     {
@@ -18,12 +20,12 @@ public class EqSelectorView : View
         Width = Dim.Fill();
         Height = Dim.Fill();
         
-        var columns = Enum.GetValues<EqRanges>()
+        _columns = Enum.GetValues<EqRanges>()
             .Select(range => {
                 var col = new EqColumn(range);
                 
-                //col.ValChanged += (r, v) => controller.UpdateEqBand(r, v);
-                return col as View;
+                col.ValChanged += AggregateEq;
+                return col;
             })
             .ToArray();
         
@@ -34,15 +36,26 @@ public class EqSelectorView : View
             Height = Dim.Fill()
         };
 
-        container.Add(columns);
+        container.Add(_columns);
         
-        foreach (var col in columns)
+        foreach (var col in _columns)
         {
-            col.X = Pos.Align(Alignment.Center, AlignmentModes.AddSpaceBetweenItems);
-            col.Y = Pos.Percent(15);
+            col.X = Pos.Align(Alignment.Center);
+            col.Y = 0;
         }
 
         Add(container);
 
+    }
+
+    private void AggregateEq()
+    {
+        _controller.UpdateEq(new EqSettings()
+        {
+            Lows = _columns[(int)EqRanges.Lows].Value, 
+            Mids = _columns[(int)EqRanges.Mids].Value,
+            Highs = _columns[(int)EqRanges.Highs].Value
+        });
+        
     }
 }
