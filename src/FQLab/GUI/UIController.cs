@@ -32,6 +32,11 @@ public class UIController
         _audioEngine?.SetEq(settings);
     }
 
+    public void PauseTrack() => _audioEngine?.Pause();
+
+    public void ResumeTrack() => _audioEngine?.Resume();
+    public void KillTrack() => _audioEngine?.Abort();
+
     private async Task StartPlayback(IAudioStream audioStream)
     {
         using (audioStream)

@@ -37,6 +37,8 @@ internal class MockAudioPlayer : IAudioPlayer
     {
         Result.Add(audioFrame);
     }
+    public void Pause() {}
+    public void Resume() {}
 }
 
 internal class MockFftProcessor : IFftProcessor

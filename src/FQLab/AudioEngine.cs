@@ -34,7 +34,7 @@ public class AudioEngine : IDisposable
 
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
-    private bool _playing = false;
+    private readonly ManualResetEventSlim _pauseEvent = new ManualResetEventSlim(true);
     public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null)
     {
         _audioStream = audioStream;
@@ -54,7 +54,14 @@ public class AudioEngine : IDisposable
 
     public void Pause()
     {
-        
+        _pauseEvent.Reset();
+        _audioPlayer.Pause();
+    }
+
+    public void Resume()
+    {
+        _pauseEvent.Set();
+        _audioPlayer.Resume();
     }
 
     public void Abort()
@@ -113,6 +120,7 @@ public class AudioEngine : IDisposable
     {
         foreach (var frame in _frameBuffer.GetConsumingEnumerable(token))
         {
+            _pauseEvent.Wait(token);
             _audioPlayer.Play(frame);
         }
     }
@@ -207,8 +215,7 @@ public class AudioEngine : IDisposable
         }
         catch (AggregateException ex) { }
         catch (ObjectDisposedException) { }
-
-        // Dispose resources
+        
         _cancellationTokenSource?.Dispose();
         _frameBuffer?.Dispose();
         
