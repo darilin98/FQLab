@@ -30,7 +30,7 @@ public class EqSelectorView : View
             .ToArray();
         
         var container = new FrameView() {
-            Title = "EQ Controls",
+            Title = "EQ",
             X = 0, Y = 0,
             Width = Dim.Fill(),
             Height = Dim.Fill()

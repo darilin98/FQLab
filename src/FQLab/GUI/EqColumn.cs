@@ -6,7 +6,7 @@ namespace FQLab;
 
 public class EqColumn : View
 {
-    public EqRanges Range { get;  }
+    public EqRanges Range { get; }
 
     public int Value { get; private set; }
 
@@ -31,21 +31,23 @@ public class EqColumn : View
         {
             Text = "[ + ]",
             X = Pos.Center(),
-            Y = Pos.Bottom(label)
+            Y = Pos.Bottom(label),
+            ShadowStyle = ShadowStyle.None
         };
 
         _valueDisplay = new Label()
         {
             Text = $"{Value}",
             X = Pos.Center(),
-            Y = Pos.Bottom(plus),
+            Y = Pos.Bottom(plus) + 1,
         };
 
         var minus = new Button()
         {
             Text = "[ - ]",
             X = Pos.Center(),
-            Y = Pos.Bottom(_valueDisplay) + 1
+            Y = Pos.Bottom(_valueDisplay) + 1,
+            ShadowStyle = ShadowStyle.None
         };
 
         plus.Accepting += (s, e) =>

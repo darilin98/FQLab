@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using System.Text;
 using Terminal.Gui.App;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
@@ -9,6 +10,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.OutputEncoding = Encoding.UTF8;
         Application.Shutdown();
         Application.Init();
         

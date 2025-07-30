@@ -15,33 +15,36 @@ public class ControlPanelView : FrameView
         var eq = new EqSelectorView(controller)
         {
             X = Pos.Left(this),
-            Y = 1,
+            Y = 0,
             Width = Dim.Percent(30),
             Height = Dim.Fill()
         };
 
         var pause = new Button()
         {
-            Text = "Pause",
-            X = Pos.Right(eq),
-            Width = Dim.Percent(10),
-            Height = Dim.Fill()
+            Text = "||",
+            X = Pos.Align(Alignment.Center),
+            Y = Pos.Center(),
+            Width = 8,
+            Height = 2
         };
         
         var play = new Button()
         {
-            Text = "Play",
-            X = Pos.Right(pause),
-            Width = Dim.Percent(10),
-            Height = Dim.Fill()
+            Text = "\u25B6",
+            X = Pos.Align(Alignment.Center),
+            Y = Pos.Center(),
+            Width = 8,
+            Height = 2
         };
 
         var stop = new Button()
         {
-            Text = "Stop",
-            X = Pos.Right(play),
-            Width = Dim.Percent(10),
-            Height = Dim.Fill()
+            Text = "\u25A0",
+            X = Pos.Align(Alignment.Center),
+            Y = Pos.Center(),
+            Width = 8,
+            Height = 2
         };
 
         pause.Accepting += (s, e) =>
@@ -62,6 +65,17 @@ public class ControlPanelView : FrameView
             e.Handled = true;
         };
 
-        Add(eq, pause, play, stop);
+        var container = new FrameView()
+        {
+            X = Pos.Right(eq),
+            Y = 0,
+            Width = Dim.Fill(),
+            Height = Dim.Fill() - 2
+        };
+
+        container.Add(pause, play, stop);
+     
+        
+        Add(eq, container);
     }
 }
