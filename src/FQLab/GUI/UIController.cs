@@ -37,6 +37,19 @@ public class UIController
     public void ResumeTrack() => _audioEngine?.Resume();
     public void KillTrack() => _audioEngine?.Abort();
 
+    public void UpdateVolume(int option)
+    {
+        if (_audioEngine is not null)
+            _audioEngine.VolumeFactor = (float)(option / 10f);
+    }
+
+    public int GetCurrentVolume()
+    {
+        if (_audioEngine is null)
+            return 0;
+        return (int)(_audioEngine.VolumeFactor * 10);
+    }
+
     private async Task StartPlayback(IAudioStream audioStream)
     {
         using (audioStream)

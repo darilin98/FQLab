@@ -41,7 +41,7 @@ public class EqSelectorView : View
         foreach (var col in _columns)
         {
             col.X = Pos.Align(Alignment.Center);
-            col.Y = 0;
+            col.Y = Pos.Center();
         }
 
         Add(container);

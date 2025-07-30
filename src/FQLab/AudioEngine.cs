@@ -15,6 +15,7 @@ public class AudioEngine : IDisposable
     private readonly IFreqDataReceiver? _dataReceiver;
 
     private EqSettings _eqSettings = new EqSettings();
+    private float _volumeFactor = 0.5f;
 
     private const int FrameSize = 1024;
     private const int HopSize = FrameSize / 2;
@@ -69,6 +70,11 @@ public class AudioEngine : IDisposable
         _cancellationTokenSource?.Cancel();
     }
 
+    public float VolumeFactor { 
+        get => _volumeFactor;
+        set => _volumeFactor = Math.Clamp(value, 0f, 1f);
+    }
+
     public void SetEq(EqSettings settings) => _eqSettings = settings;
 
     private void AudioProducerProcess(CancellationToken token)
@@ -108,6 +114,8 @@ public class AudioEngine : IDisposable
             OverlapAddToBuffer(ifftFrame.Samples);
            
             var output = GetOutputSamplesFromBuffer();
+            
+            output = ScaleVolume(output);
 
             _writePos = (_writePos + HopSize) % (FrameSize + HopSize);
 
@@ -203,6 +211,16 @@ public class AudioEngine : IDisposable
         }
 
         return freqBins;
+    }
+
+    private float[] ScaleVolume(float[] samples)
+    {
+        for (int i = 0; i < samples.Length; i++)
+        {
+            samples[i] *= _volumeFactor;
+        }
+
+        return samples;
     }
 
     public void Dispose()
