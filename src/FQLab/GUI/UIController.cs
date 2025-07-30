@@ -59,8 +59,7 @@ public class UIController
             {
                 _audioEngine = response.AudioEngine;
                 var playingWindow = new PlayingWindow(this, response.View);
-            
-            
+                
                 Application.Top?.Add(playingWindow);
                 _audioEngine.Run();
                 try
@@ -71,7 +70,7 @@ public class UIController
                 {
                     // Playback Aborted
                 }
-                Application.Top.Remove(playingWindow);
+                Application.Top?.Remove(playingWindow);
             }
         }
     }

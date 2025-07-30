@@ -4,9 +4,9 @@ namespace FQLab;
 
 public static class PluginLoader
 {
-    public static List<IAudioPlugin> LoadPlugins(string pluginSourcePath)
+    public static List<PluginInstance> LoadPlugins(string pluginSourcePath)
     {
-        var plugins = new List<IAudioPlugin>();
+        var plugins = new List<PluginInstance>();
 
         if (!Directory.Exists(pluginSourcePath))
             return plugins;
@@ -24,7 +24,7 @@ public static class PluginLoader
                 {
                     if (Activator.CreateInstance(t) is IAudioPlugin plugin)
                     {
-                        plugins.Add(plugin);
+                        plugins.Add(new PluginInstance(plugin));
                     }
                     
                 }

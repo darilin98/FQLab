@@ -11,7 +11,7 @@ public class AudioEngine : IDisposable
     private readonly IFftProcessor _fftProcessor;
     private readonly IAudioPlayer _audioPlayer;
 
-    private readonly List<IAudioPlugin>? _audioPlugins;
+    private readonly List<PluginInstance>? _audioPlugins;
 
     // Optional for rendering audio data
     private readonly IFreqDataReceiver? _dataReceiver;
@@ -38,7 +38,7 @@ public class AudioEngine : IDisposable
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private readonly ManualResetEventSlim _pauseEvent = new ManualResetEventSlim(true);
-    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null, List<IAudioPlugin>? audioPlugins = null)
+    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null, List<PluginInstance>? audioPlugins = null)
     {
         _audioStream = audioStream;
         _audioPlayer = audioPlayer;
@@ -100,9 +100,10 @@ public class AudioEngine : IDisposable
 
             if (_audioPlugins is not null)
             {
-                foreach (var plugin in _audioPlugins)
+                foreach (var p in _audioPlugins)
                 {
-                    plugin.Process(ref monoInput, _audioStream.Format with { ChannelCount = 1 }); 
+                    if (!p.Bypass)
+                        p.Plugin.Process(ref monoInput, _audioStream.Format with { ChannelCount = 1 }); 
                 }
             }
 

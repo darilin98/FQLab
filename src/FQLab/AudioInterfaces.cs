@@ -30,6 +30,7 @@ public interface IAudioReader : ISampleProvider, IDisposable
 }
 public interface IAudioPlugin
 {
+    public string Name { get; }
     void Process(ref float[] samples, AudioFormat format);
 }
 
