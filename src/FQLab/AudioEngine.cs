@@ -11,6 +11,8 @@ public class AudioEngine : IDisposable
     private readonly IFftProcessor _fftProcessor;
     private readonly IAudioPlayer _audioPlayer;
 
+    private readonly List<IAudioPlugin>? _audioPlugins;
+
     // Optional for rendering audio data
     private readonly IFreqDataReceiver? _dataReceiver;
 
@@ -36,12 +38,13 @@ public class AudioEngine : IDisposable
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private readonly ManualResetEventSlim _pauseEvent = new ManualResetEventSlim(true);
-    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null)
+    public AudioEngine(IAudioStream audioStream, IAudioPlayer audioPlayer, IFftProcessor fftProcessor, IFreqDataReceiver? dataReceiver = null, List<IAudioPlugin>? audioPlugins = null)
     {
         _audioStream = audioStream;
         _audioPlayer = audioPlayer;
         _fftProcessor = fftProcessor;
         _dataReceiver = dataReceiver;
+        _audioPlugins = audioPlugins;
 
         _audioPlayer.Initialize(_audioStream);
     }
@@ -67,6 +70,7 @@ public class AudioEngine : IDisposable
 
     public void Abort()
     {
+        Resume();
         _cancellationTokenSource?.Cancel();
     }
 
@@ -93,7 +97,15 @@ public class AudioEngine : IDisposable
             ShiftBuffers(nextFrame);
             
             var monoInput = MixToMonoFromBuffer();
-            
+
+            if (_audioPlugins is not null)
+            {
+                foreach (var plugin in _audioPlugins)
+                {
+                    plugin.Process(ref monoInput, _audioStream.Format with { ChannelCount = 1 }); 
+                }
+            }
+
             // Apply windowing
             for (int i = 0; i < FrameSize; i++)
                 monoInput[i] *= _hannWindow[i];

@@ -30,7 +30,7 @@ public interface IAudioReader : ISampleProvider, IDisposable
 }
 public interface IAudioPlugin
 {
-    
+    void Process(ref float[] samples, AudioFormat format);
 }
 
 public interface IFreqDataReceiver
@@ -40,5 +40,5 @@ public interface IFreqDataReceiver
 
 public interface IAudioEngineFactory
 {
-    AudioEngineFactoryResult Create(IAudioStream audioStream, bool withDataExport = false);
+    AudioEngineFactoryResult Create(IAudioStream audioStream, bool withDataExport = false, string? alternatePluginPath = null);
 }
