@@ -7,6 +7,8 @@ public interface IAudioPlayer
 {
     void Initialize(IAudioStream audioStream);
     void Play(AudioFrame audioFrame);
+    void Pause();
+    void Resume();
 }
 
 public interface IFftProcessor

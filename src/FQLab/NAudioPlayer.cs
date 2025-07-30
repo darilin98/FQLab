@@ -24,6 +24,16 @@ public class NAudioPlayer : IAudioPlayer, IDisposable
         _sampleProvider.AddSamples(audioFrame.Samples);
     }
 
+    public void Pause()
+    {
+        _outputDevice.Pause();
+    }
+
+    public void Resume()
+    {
+        _outputDevice.Play();
+    }
+
     public void Dispose()
     {
         _sampleProvider.CompleteAdding();

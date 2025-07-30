@@ -14,6 +14,9 @@ public class LoggerAudioPlayer : IAudioPlayer
             Console.WriteLine(sample);
         }
     }
+
+    public void Pause() {}
+    public void Resume() {}
 }
 
 public static class Logger
