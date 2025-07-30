@@ -207,6 +207,7 @@ public class AudioEngine : IDisposable
 
     public void Dispose()
     {
+        Logger.Log("AudioEngine disposed");
         _cancellationTokenSource?.Cancel();
 
         try

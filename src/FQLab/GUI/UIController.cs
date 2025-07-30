@@ -50,7 +50,14 @@ public class UIController
             
                 Application.Top?.Add(playingWindow);
                 _audioEngine.Run();
-                await Task.WhenAll(_audioEngine.Tasks);
+                try
+                {
+                    await Task.WhenAll(_audioEngine.Tasks);
+                }
+                catch (OperationCanceledException)
+                {
+                    // Playback Aborted
+                }
                 Application.Top.Remove(playingWindow);
             }
         }
