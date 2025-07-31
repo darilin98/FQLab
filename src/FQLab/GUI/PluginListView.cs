@@ -17,15 +17,19 @@ public class PluginListView : FrameView
         
         if (plugins is not null)
         {
+            int prevY = 0;
             foreach (var plugin in plugins)
             {
                 var controlBox = new Plugin(_controller, plugin)
                 {
                     X = 0,
-                    Y = 0,
+                    Y = prevY,
                 };
+                
                 Add(controlBox);
-               
+
+                prevY += 4;
+
             }
         }
     }
