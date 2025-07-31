@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HallEcho", "HallEcho.csproj", "{6FCEC079-9BA5-4CEE-B922-9AAD9C8522AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WobbleTremolo", "WobbleTremolo\WobbleTremolo.csproj", "{D518E7F9-980E-429F-99BE-A76A4A327D03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6FCEC079-9BA5-4CEE-B922-9AAD9C8522AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FCEC079-9BA5-4CEE-B922-9AAD9C8522AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FCEC079-9BA5-4CEE-B922-9AAD9C8522AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D518E7F9-980E-429F-99BE-A76A4A327D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D518E7F9-980E-429F-99BE-A76A4A327D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D518E7F9-980E-429F-99BE-A76A4A327D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D518E7F9-980E-429F-99BE-A76A4A327D03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
