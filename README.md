@@ -32,4 +32,4 @@ More information on how to create your own plugin here: [Creating a plugin](docs
 
 [Project specification (CZ)](docs/specifikace_CZ.md)
 
-[Full developer documentation]()
+[Full developer documentation](https://darilin98.github.io/FQLab/index.html)
