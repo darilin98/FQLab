@@ -1,4 +1,5 @@
 using Terminal.Gui.App;
+using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
 
 namespace FQLab;
@@ -10,6 +11,7 @@ public class UIController
 
     private AudioEngine? _audioEngine;
 
+    private OpenDialog? _fileBrowser;
     public UIController(IAudioEngineFactory engineFactory)
     {
         _engineFactory = engineFactory;
@@ -20,6 +22,7 @@ public class UIController
         
         if (InputHandler.TryOpenAudioStream(filePath, out var stream))
         {
+            Application.Top?.Remove(_fileBrowser);
             _playbackTask = Task.Run(() => StartPlayback(stream));
             return true;
         }
@@ -54,7 +57,7 @@ public class UIController
     {
         return _audioEngine?.PluginList;
     }
-
+    
     private async Task StartPlayback(IAudioStream audioStream)
     {
         using (audioStream)
@@ -76,6 +79,7 @@ public class UIController
                     // Playback Aborted
                 }
                 Application.Top?.Remove(playingWindow);
+                
             }
         }
     }

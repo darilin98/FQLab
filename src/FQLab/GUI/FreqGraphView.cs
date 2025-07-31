@@ -9,8 +9,8 @@ public class FreqGraphView : View
     private double[] _trails = [];
     
     private const double MinMagnitude = 1e-10;
-    private const double DecayFactor = 0.98;
-    private const double TrailDecay = 0.90;
+    private const double DecayFactor = 0.99;
+    private const double TrailDecay = 0.985;
     private double _smoothedMax = 1.0;
 
     public void UpdateData(double[] magnitudes)
