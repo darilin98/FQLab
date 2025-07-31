@@ -2,7 +2,9 @@
 
 Spectral audio sandbox with custom plugin support
 
-Created for the courses **NPRG035: Programming in C#** + **NPRG038: Advanced C# Programming.**
+Created as part of the courses **NPRG035: Programming in C#** and **NPRG038: Advanced C# Programming** at Charles University.
+
+![visual_demo](docs/resources/visual_demo.gif)
 
 ## Before you install 
 
