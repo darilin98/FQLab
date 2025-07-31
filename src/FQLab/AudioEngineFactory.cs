@@ -5,7 +5,7 @@ namespace FQLab;
 
 public class AudioEngineFactory : IAudioEngineFactory
 {
-    private string _defaultPluginPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "Plugins"));
+    private string _defaultPluginPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "plugins"));
     public AudioEngineFactoryResult Create(IAudioStream audioStream, bool withDataExport = false, string? alternatePluginPath = null)
     {
         IAudioPlayer? player;

@@ -81,6 +81,8 @@ public class AudioEngine : IDisposable
 
     public void SetEq(EqSettings settings) => _eqSettings = settings;
 
+    public List<PluginInstance>? PluginList => _audioPlugins;
+
     private void AudioProducerProcess(CancellationToken token)
     {
         _channelCount = _audioStream.Format.ChannelCount;
@@ -98,14 +100,7 @@ public class AudioEngine : IDisposable
             
             var monoInput = MixToMonoFromBuffer();
 
-            if (_audioPlugins is not null)
-            {
-                foreach (var p in _audioPlugins)
-                {
-                    if (!p.Bypass)
-                        p.Plugin.Process(ref monoInput, _audioStream.Format with { ChannelCount = 1 }); 
-                }
-            }
+            
 
             // Apply windowing
             for (int i = 0; i < FrameSize; i++)
@@ -129,6 +124,15 @@ public class AudioEngine : IDisposable
             var output = GetOutputSamplesFromBuffer();
             
             output = ScaleVolume(output);
+            
+            if (_audioPlugins is not null)
+            {
+                foreach (var p in _audioPlugins)
+                {
+                    if (!p.Bypass)
+                        p.Plugin.Process(ref output, _audioStream.Format with { ChannelCount = 1 }); 
+                }
+            }
 
             _writePos = (_writePos + HopSize) % (FrameSize + HopSize);
 
