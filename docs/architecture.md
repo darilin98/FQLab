@@ -86,4 +86,6 @@ The 3rd party developer has access to normalized PCM samples and can edit them f
 
 ### Further possible expansions
 
+The project is laid out in such a way that making it work cross-platform should be straightforward and painless.
 
+Readers/Players are abstracted behind an interface. Linux/macOS support could work by just adding some more dependecies that decode audio files and connect to audio sinks.
