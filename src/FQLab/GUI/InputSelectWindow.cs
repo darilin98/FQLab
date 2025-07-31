@@ -15,6 +15,12 @@ public class InputSelectWindow : Window
 
         _controller = controller;
 
+        var fileBrowser = new OpenDialog()
+        {
+            Width = Dim.Fill(),
+            Height = Dim.Fill()
+        };
+
         var playBtn = new Button()
         {
             Text = "Play",

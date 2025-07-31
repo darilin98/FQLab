@@ -50,6 +50,11 @@ public class UIController
         return (int)(_audioEngine.VolumeFactor * 10);
     }
 
+    public List<PluginInstance>? GetPlugins()
+    {
+        return _audioEngine?.PluginList;
+    }
+
     private async Task StartPlayback(IAudioStream audioStream)
     {
         using (audioStream)
