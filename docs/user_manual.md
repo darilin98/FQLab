@@ -19,7 +19,7 @@ Once you select a valid audio file (eg. **.mp3** or **.wav**) the window will ch
 
 ### Play mode
 
-![Play Mode](resources/playback_state.md)
+![Play Mode](resources/playback_state.png)
 
 The terminal is now split into 3 distinct parts.
 
