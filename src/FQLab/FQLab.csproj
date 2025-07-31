@@ -13,4 +13,8 @@
       <PackageReference Include="Terminal.Gui" Version="2.0.0-develop.4525" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\contracts\FQLab.PluginContracts\FQLab.PluginContracts.csproj" />
+    </ItemGroup>
+
 </Project>

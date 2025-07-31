@@ -3,6 +3,7 @@ using System.Numerics;
 namespace FQLabTests;
 
 using FQLab;
+using FQLab.PluginContracts;
 
 internal class MockAudioStream : IAudioStream
 {

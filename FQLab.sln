@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FQLab", "src\FQLab\FQLab.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FQLabTests", "src\FQLabTests\FQLabTests.csproj", "{08CEB0D8-6F70-4417-876A-A49D071CECDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FQLab.PluginContracts", "contracts\FQLab.PluginContracts\FQLab.PluginContracts.csproj", "{469A0FC8-19B0-4791-AFE4-59251E9CC788}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{08CEB0D8-6F70-4417-876A-A49D071CECDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CEB0D8-6F70-4417-876A-A49D071CECDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CEB0D8-6F70-4417-876A-A49D071CECDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469A0FC8-19B0-4791-AFE4-59251E9CC788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469A0FC8-19B0-4791-AFE4-59251E9CC788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469A0FC8-19B0-4791-AFE4-59251E9CC788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469A0FC8-19B0-4791-AFE4-59251E9CC788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

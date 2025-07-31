@@ -1,4 +1,5 @@
 using System.Reflection;
+using FQLab.PluginContracts;
 
 namespace FQLab;
 

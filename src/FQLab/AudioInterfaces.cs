@@ -1,5 +1,6 @@
 using System.Numerics;
 using NAudio.Wave;
+using FQLab.PluginContracts;
 
 namespace FQLab;
 
@@ -27,11 +28,6 @@ public interface IAudioStream : IDisposable
 public interface IAudioReader : ISampleProvider, IDisposable
 {
     AudioFormat Format { get; }
-}
-public interface IAudioPlugin
-{
-    public string Name { get; }
-    void Process(ref float[] samples, AudioFormat format);
 }
 
 public interface IFreqDataReceiver

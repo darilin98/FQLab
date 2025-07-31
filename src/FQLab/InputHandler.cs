@@ -1,6 +1,6 @@
-namespace FQLab;
+using FQLab.PluginContracts;
 
-using NAudio.Wave;
+namespace FQLab;
 
 public static class InputHandler
 {

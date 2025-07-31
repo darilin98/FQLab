@@ -1,9 +1,9 @@
 using System.Numerics;
 using MathNet.Numerics.IntegralTransforms;
+using FQLab.PluginContracts;
 
 namespace FQLab;
 
-using MathNet.Numerics;
 
 public class MathNetFftProcessor : IFftProcessor
 {

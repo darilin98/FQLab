@@ -1,3 +1,5 @@
+using FQLab.PluginContracts;
+
 namespace FQLab;
 
 public class PluginInstance

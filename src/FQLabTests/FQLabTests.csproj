@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\contracts\FQLab.PluginContracts\FQLab.PluginContracts.csproj" />
       <ProjectReference Include="..\FQLab\FQLab.csproj" />
     </ItemGroup>
 

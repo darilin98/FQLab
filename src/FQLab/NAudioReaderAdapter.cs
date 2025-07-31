@@ -1,3 +1,4 @@
+using FQLab.PluginContracts;
 using NAudio.Wave;
 
 namespace FQLab;
