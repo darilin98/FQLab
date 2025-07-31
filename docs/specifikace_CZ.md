@@ -1,4 +1,6 @@
-# Zápočtový program – Audio Visualizer
+# (CZ) Project specification
+
+## Zápočtový program – Audio Visualizer
 
 Jako téma zápočtového programu do NPRG035 a NPRG038 bych chtěl vytvořit jednoduchý **Audio Visualizer**.
 
