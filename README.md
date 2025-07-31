@@ -4,6 +4,14 @@ Spectral audio sandbox with custom plugin support
 
 Created for the courses **NPRG035: Programming in C#** + **NPRG038: Advanced C# Programming.**
 
+## Before you install 
+
+The app is currently Windows-only and requires a modern terminal (e.g. Windows Terminal).
+
+The terminal's default font also has to support a broad scale of unicode characters in order for the terminal GUI to display properly.
+
+Tested to work on: `JetBrains Mono Regular`
+
 ## Running the app
 
 Clone the repo and use dotnet build + run in the FQLab project directory.
@@ -18,6 +26,6 @@ More information on how to create your own plugin here: [Creating a plugin](docs
 
 ### Further reading
 
-[Project specification (CZ)]
+[Project specification (CZ)](docs/specifikace_CZ.md)
 
 [Full developer documentation]()
