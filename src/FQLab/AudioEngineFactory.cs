@@ -3,6 +3,9 @@ using Terminal.Gui.ViewBase;
 
 namespace FQLab;
 
+/// <summary>
+/// Creates audio engines based on user setups.
+/// </summary>
 public class AudioEngineFactory : IAudioEngineFactory
 {
     private string _defaultPluginPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "plugins"));

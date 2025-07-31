@@ -4,6 +4,9 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Singular EQ selection column for a specific range. Allows for cut/boost from -5 to 5.
+/// </summary>
 public class EqColumn : View
 {
     public EqRanges Range { get; }

@@ -1,9 +1,17 @@
 using FQLab.PluginContracts;
 
 namespace FQLab;
-
+/// <summary>
+/// Handles creation of audio stream from a file location.
+/// </summary>
 public static class InputHandler
 {
+    /// <summary>
+    /// Attempts to open an audio stream
+    /// </summary>
+    /// <param name="audioFilePath">Path to file.</param>
+    /// <param name="audioStream">Resulting stream reference if the operation succeeds.</param>
+    /// <returns>Boolean value based on operation status.</returns>
     public static bool TryOpenAudioStream(string audioFilePath, out IAudioStream audioStream)
     {
         try

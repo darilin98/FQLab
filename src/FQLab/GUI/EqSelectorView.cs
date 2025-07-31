@@ -7,6 +7,9 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Parent view of individual EQ selections. Accommodates ranges based on the engine's accepted setup.
+/// </summary>
 public class EqSelectorView : View
 {
     private UIController _controller;

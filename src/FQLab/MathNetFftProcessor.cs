@@ -4,10 +4,16 @@ using FQLab.PluginContracts;
 
 namespace FQLab;
 
-
+/// <summary>
+/// Wraps the FFT from Math.NET.
+/// </summary>
 public class MathNetFftProcessor : IFftProcessor
 {
-    
+    /// <summary>
+    /// Executes forward FFT on samples of size AudioFrame
+    /// </summary>
+    /// <param name="audioFrame">Defined in: <see cref="AudioFrame"/></param>
+    /// <returns>Array of complex numbers representing frequency bins.</returns>
     public Complex[] Forward(AudioFrame audioFrame)
     {
         var complexSamples = audioFrame.Samples
@@ -19,6 +25,12 @@ public class MathNetFftProcessor : IFftProcessor
         return complexSamples;
     }
 
+    /// <summary>
+    /// Transforms frequency bins back to PCM (float[]) samples
+    /// </summary>
+    /// <param name="freqBins"></param>
+    /// <param name="format"></param>
+    /// <returns><see cref="AudioFrame"/> ready for playback.</returns>
     public AudioFrame Inverse(Complex[] freqBins, AudioFormat format)
     {
         var flippedDomain = (Complex[])freqBins.Clone();

@@ -8,6 +8,9 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Initial window used to select a file to be decoded and played.
+/// </summary>
 public class InputSelectWindow : Window
 {
     private UIController _controller;
@@ -31,6 +34,9 @@ public class InputSelectWindow : Window
     }
 }
 
+/// <summary>
+/// Mouse-enabled file explorer.
+/// </summary>
 public class SimpleFileBrowser : View
 {
     private ListView _files;

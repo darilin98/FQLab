@@ -2,9 +2,16 @@ using System.Reflection;
 using FQLab.PluginContracts;
 
 namespace FQLab;
-
+/// <summary>
+/// Static helper used for extraction of audio plugins (IAudioPlugin objects).
+/// </summary>
 public static class PluginLoader
 {
+    /// <summary>
+    /// Scans the specified directory for .dll files.
+    /// </summary>
+    /// <param name="pluginSourcePath">Directory in which plugin .dll files should be located.</param>
+    /// <returns>Returns a List of initiated objects found in the files.</returns>
     public static List<PluginInstance> LoadPlugins(string pluginSourcePath)
     {
         var plugins = new List<PluginInstance>();

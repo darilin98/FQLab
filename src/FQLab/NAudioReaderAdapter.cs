@@ -3,6 +3,9 @@ using NAudio.Wave;
 
 namespace FQLab;
 
+/// <summary>
+/// Helper class that retypes the external NAudioReader to the project specific IAudioReader
+/// </summary>
 public class NAudioReaderAdapter : IAudioReader
 {
     private readonly AudioFileReader _reader;

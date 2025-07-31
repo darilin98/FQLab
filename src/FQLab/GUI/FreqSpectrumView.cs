@@ -1,15 +1,14 @@
 using System.Drawing;
-using System.Numerics;
-using MathNet.Numerics.Interpolation;
-using NAudio.Wave.Compression;
-using Terminal.Gui.App;
 using Terminal.Gui.Drawing;
 using Terminal.Gui.ViewBase;
 using Terminal.Gui.Views;
-using Color = Terminal.Gui.Drawing.Color;
 
 namespace FQLab;
 
+/// <summary>
+/// Encapsulates views that display the frequency graphs.
+/// Takes care of their layout.
+/// </summary>
 public class FreqSpectrumView : FrameView
 {
 
@@ -48,6 +47,10 @@ public class FreqSpectrumView : FrameView
             _isReady = true;
     }
     
+    /// <summary>
+    /// Propagates data to graph only when the UI is ready for drawing.
+    /// </summary>
+    /// <param name="magnitudes">Formated frequency data ready for display.</param>
     public void UpdateData(double[] magnitudes)
     {
         if (_isReady)

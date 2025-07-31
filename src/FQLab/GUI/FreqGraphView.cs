@@ -9,10 +9,14 @@ public class FreqGraphView : View
     private double[] _trails = [];
     
     private const double MinMagnitude = 1e-10;
-    private const double DecayFactor = 0.99;
-    private const double TrailDecay = 0.985;
+    private const double DecayFactor = 0.99; // How much solid bars stick around
+    private const double TrailDecay = 0.985; // How fast trails fall to the ground
     private double _smoothedMax = 1.0;
 
+    /// <summary>
+    /// Draws a bar graph in real time.
+    /// </summary>
+    /// <param name="magnitudes">Scalars for the length of individual columns.</param>
     public void UpdateData(double[] magnitudes)
     {
         if (magnitudes.Length == 0)

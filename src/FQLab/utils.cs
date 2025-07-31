@@ -62,6 +62,6 @@ public class SineWaveStream : IAudioStream, IDisposable
 
     public void Dispose()
     {
-        // TODO release managed resources here
+        
     }
 }

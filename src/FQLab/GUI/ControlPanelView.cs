@@ -4,6 +4,9 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Stores all views that can communicate through the controller with the audio engine.
+/// </summary>
 public class ControlPanelView : FrameView
 {
     private UIController _controller;
@@ -26,7 +29,7 @@ public class ControlPanelView : FrameView
 
         var pause = new Button()
         {
-            Text = "||",
+            Text = "||", // Pause
             X = Pos.Align(Alignment.Center),
             Y = Pos.Center(),
             Width = 8,
@@ -35,7 +38,7 @@ public class ControlPanelView : FrameView
         
         var play = new Button()
         {
-            Text = "\u25B6",
+            Text = "\u25B6", // Play
             X = Pos.Align(Alignment.Center),
             Y = Pos.Center(),
             Width = 8,
@@ -44,7 +47,7 @@ public class ControlPanelView : FrameView
 
         var stop = new Button()
         {
-            Text = "\u25A0",
+            Text = "\u25A0", // Stop
             X = Pos.Align(Alignment.Center),
             Y = Pos.Center(),
             Width = 8,

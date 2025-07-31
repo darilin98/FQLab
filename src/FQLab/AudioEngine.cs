@@ -5,6 +5,10 @@ using Terminal.Gui.App;
 
 namespace FQLab;
 
+/// <summary>
+/// Core class responsible for managing the state and playback of the currently selected track.
+/// The lifespan of this instance matches the lifespan of the <see cref="IAudioStream"/> it consumes.
+/// </summary>
 public class AudioEngine : IDisposable
 {
     private readonly IAudioStream _audioStream;
@@ -13,7 +17,7 @@ public class AudioEngine : IDisposable
 
     private readonly List<PluginInstance>? _audioPlugins;
 
-    // Optional for rendering audio data
+    /// Optional for rendering audio data
     private readonly IFreqDataReceiver? _dataReceiver;
 
     private EqSettings _eqSettings = new EqSettings();
@@ -35,6 +39,9 @@ public class AudioEngine : IDisposable
     private Task _consumerTask;
     private CancellationTokenSource? _cancellationTokenSource;
 
+    /// <summary>
+    /// Gets the currently running producer and consumer tasks.
+    /// </summary>
     public Task[] Tasks => new[] { _producerTask, _consumerTask };
     
     private readonly ManualResetEventSlim _pauseEvent = new ManualResetEventSlim(true);
@@ -49,6 +56,9 @@ public class AudioEngine : IDisposable
         _audioPlayer.Initialize(_audioStream);
     }
 
+    /// <summary>
+    /// Uses start and forget to run asynchronous tasks of producing/consuming audio data.
+    /// </summary>
     public void Run()
     {
         _cancellationTokenSource = new CancellationTokenSource();
@@ -56,33 +66,57 @@ public class AudioEngine : IDisposable
         _consumerTask = Task.Run(() => AudioConsumerProcess(_cancellationTokenSource.Token));
     }
 
+    /// <summary>
+    /// Pauses both processes.
+    /// </summary>
     public void Pause()
     {
         _pauseEvent.Reset();
         _audioPlayer.Pause();
     }
 
+    /// <summary>
+    /// Resumes pipeline.
+    /// </summary>
     public void Resume()
     {
         _pauseEvent.Set();
         _audioPlayer.Resume();
     }
 
+    /// <summary>
+    /// Force quits pipeline safely.
+    /// </summary>
     public void Abort()
     {
         Resume();
         _cancellationTokenSource?.Cancel();
     }
 
+    /// <summary>
+    /// Exposes volume factor (in ranges 0 to 1).
+    /// </summary>
     public float VolumeFactor { 
         get => _volumeFactor;
         set => _volumeFactor = Math.Clamp(value, 0f, 1f);
     }
 
+    /// <summary>
+    /// Updates EQ settings based on received data.
+    /// </summary>
+    /// <param name="settings">Immutable struct of settings from the GUI.</param>
     public void SetEq(EqSettings settings) => _eqSettings = settings;
 
+    /// <summary>
+    /// Returns all detected plugins inside the engine.
+    /// </summary>
     public List<PluginInstance>? PluginList => _audioPlugins;
 
+    /// <summary>
+    /// Core audio pipeline. Consumes data from the _audioStream and processes them.
+    /// Pushes the result into a data structure for the audio consumer.
+    /// </summary>
+    /// <param name="token">Token enabling cancellation of pipeline.</param>
     private void AudioProducerProcess(CancellationToken token)
     {
         _channelCount = _audioStream.Format.ChannelCount;
@@ -141,6 +175,10 @@ public class AudioEngine : IDisposable
         _frameBuffer.CompleteAdding();
     }
 
+    /// <summary>
+    /// Consumes processed data from the buffer and pushes it to the player.
+    /// </summary>
+    /// <param name="token"></param>
     private void AudioConsumerProcess(CancellationToken token)
     {
         foreach (var frame in _frameBuffer.GetConsumingEnumerable(token))
@@ -240,6 +278,9 @@ public class AudioEngine : IDisposable
         return samples;
     }
 
+    /// <summary>
+    /// Safely gets rid of the engine when stream runs out.
+    /// </summary>
     public void Dispose()
     {
         Logger.Log("AudioEngine disposed");

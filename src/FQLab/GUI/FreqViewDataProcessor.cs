@@ -4,6 +4,10 @@ using Terminal.Gui.ViewBase;
 
 namespace FQLab;
 
+/// <summary>
+/// Acts as a data sink for frequency data.
+/// Makes sure all data is in proper format for the graph view.
+/// </summary>
 public class FreqViewDataProcessor : IFreqDataReceiver
 {
     private readonly FreqSpectrumView _spectrumView;
@@ -16,12 +20,20 @@ public class FreqViewDataProcessor : IFreqDataReceiver
     private double[] _backMagnitudes = [];
     
     private readonly object _bufferLock = new();
+    /// <summary>
+    /// Starts graph refresh task.
+    /// </summary>
+    /// <param name="spectrumView"></param>
     public FreqViewDataProcessor(FreqSpectrumView spectrumView)
     {
         _spectrumView = spectrumView;
         Application.AddTimeout(TimeSpan.FromMilliseconds(5), GraphRenderCallBack);
     }
     
+    /// <summary>
+    /// Accepts frequency from audio pipeline and passes it to designated graph views.
+    /// </summary>
+    /// <param name="viewData"></param>
     public void ReceiveFrequencyData(FreqViewData viewData)
     {
         var result = CalculateLogFreqBuckets(viewData);

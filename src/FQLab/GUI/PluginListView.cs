@@ -3,6 +3,10 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Displays installed plugin in a list.
+/// Enables on/off toggles.
+/// </summary>
 public class PluginListView : FrameView
 {
     private UIController _controller;

@@ -4,6 +4,10 @@ using Terminal.Gui.Views;
 
 namespace FQLab;
 
+/// <summary>
+/// Window containing all views related to audio playback.
+/// Its lifetime is identical to that of the stream and engine.
+/// </summary>
 public class PlayingWindow : Window
 {
     private UIController _controller;

@@ -1,12 +1,18 @@
 namespace FQLab;
-
+/// <summary>
+/// Immutable struct used for sending updated settings data from the GUI to the audio pipeline.
+/// </summary>
 public readonly struct EqSettings
 {
     public int Lows { get; init; }
     public int Mids { get; init; }
     public int Highs { get; init; }
 
-    
+    /// <summary>
+    /// Gets the scale factor based on the desired frequency range.
+    /// </summary>
+    /// <param name="range">Accessor from the enum.</param>
+    /// <exception cref="ArgumentOutOfRangeException">When accessed by an invalid EqRanges option.</exception>
     public float this[EqRanges range] =>
         range switch
         {
