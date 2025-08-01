@@ -1,0 +1,5 @@
+<map id="FQLab.FreqViewDataProcessor.CalculateLogFreqBuckets" name="FQLab.FreqViewDataProcessor.CalculateLogFreqBuckets">
+<area shape="rect" id="Node000001" title=" " alt="" coords="277,5,501,45"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1FreqViewDataProcessor.html#a203c926990e8ec668be10feaabcf960b" title="Accepts frequency from audio pipeline and passes it to designated graph views." alt="" coords="5,5,229,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,28,229,28,229,23,264,23"/>
+</map>

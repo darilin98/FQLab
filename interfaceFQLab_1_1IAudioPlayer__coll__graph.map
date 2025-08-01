@@ -1,0 +1,3 @@
+<map id="FQLab.IAudioPlayer" name="FQLab.IAudioPlayer">
+<area shape="rect" id="Node000001" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="5,5,147,131"/>
+</map>

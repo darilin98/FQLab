@@ -1,0 +1,13 @@
+<map id="FQLab.PluginContracts.AudioFormat" name="FQLab.PluginContracts.AudioFormat">
+<area shape="rect" id="Node000001" title="Couples together crucial metadata about the audio stream." alt="" coords="777,69,988,109"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1NAudioReaderAdapter.html#a2edce2c5981d44364cdb329c4250d7e9" title=" " alt="" coords="515,5,729,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="787,69,703,48,705,43,788,63"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1SineWaveStream.html#a1f3e9ac400fc0d5d5e18c3109988ef41" title=" " alt="" coords="517,69,727,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="764,92,727,92,727,87,764,87"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1InputHandler.html#a8009216753e4eac81c4548aa69089727" title="Attempts to open an audio stream." alt="" coords="519,133,725,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="788,115,705,136,703,131,787,110"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1UIController.html#ab3b6e41bd3cc9b49d55e792a83ed9112" title="Takes a file and if successful starts the audio pipeline." alt="" coords="248,141,467,166"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="505,156,467,156,467,151,505,151"/>
+<area shape="rect" id="Node000006" href="$classFQLab_1_1InputSelectWindow.html#a7b6e303385f67952abdbcd71922d307a" title=" " alt="" coords="5,133,200,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="234,156,200,156,200,151,234,151"/>
+</map>

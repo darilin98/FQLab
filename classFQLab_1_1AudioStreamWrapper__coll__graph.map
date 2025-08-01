@@ -1,0 +1,12 @@
+<map id="FQLab.AudioStreamWrapper" name="FQLab.AudioStreamWrapper">
+<area shape="rect" id="Node000001" title="Wrapper class for the NAudio file reader. Enables optional decoupling of NAudio from the project arch..." alt="" coords="39,248,237,353"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioStream.html" title="Represents the decoded audio file. Enables on request fetching of data." alt="" coords="5,120,119,185"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,196,113,247,109,249,82,199"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="35,5,126,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,85,70,120,65,119,70,84"/>
+<area shape="rect" id="Node000004" href="$interfaceFQLab_1_1IAudioReader.html" title="Abstracts readers to be used inside IAudioStream." alt="" coords="143,120,290,185"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="131,77,180,118,177,122,128,81"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,187,176,235,171,232,197,184"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="156,5,277,71"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="219,85,219,120,214,120,214,85"/>
+</map>

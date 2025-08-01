@@ -1,0 +1,5 @@
+<map id="FQLab.NAudioPlayer.Play" name="FQLab.NAudioPlayer.Play">
+<area shape="rect" id="Node000001" title="Feeds samples from the frame to the player." alt="" coords="5,13,192,38"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1NAudioBufferedProvider.html#a504d7f95f26f74b7800080dbb57dee8e" title="Allows external pipeline to add processed samples in queue for playback." alt="" coords="240,5,467,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,23,226,23,226,28,192,28"/>
+</map>

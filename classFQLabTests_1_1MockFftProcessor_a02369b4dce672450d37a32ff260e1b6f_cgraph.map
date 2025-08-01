@@ -1,0 +1,5 @@
+<map id="FQLabTests.MockFftProcessor.Inverse" name="FQLabTests.MockFftProcessor.Inverse">
+<area shape="rect" id="Node000001" title="Performs inverse FFT on an array of frequency bins." alt="" coords="5,5,224,45"/>
+<area shape="rect" id="Node000002" href="$namespaceFQLab.html#a7b2f30b69db5722f8e5226c476f40633" title="Couples together crucial audio stream metadata with float samples." alt="" coords="272,13,417,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,23,258,23,258,28,224,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FQLab.UIController.TryPlayFile" name="FQLab.UIController.TryPlayFile">
+<area shape="rect" id="Node000001" title="Takes a file and if successful starts the audio pipeline." alt="" coords="248,13,467,38"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1InputSelectWindow.html#a7b6e303385f67952abdbcd71922d307a" title=" " alt="" coords="5,5,200,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,28,200,28,200,23,234,23"/>
+</map>

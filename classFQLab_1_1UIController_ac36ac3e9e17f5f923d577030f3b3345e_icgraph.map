@@ -1,0 +1,5 @@
+<map id="FQLab.UIController.UpdateVolume" name="FQLab.UIController.UpdateVolume">
+<area shape="rect" id="Node000001" title="Takes volume selection and handles proper conversion for the engine." alt="" coords="284,5,479,45"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1ControlPanelView.html#ae35d280420ffb5aca9f83446543ddff4" title=" " alt="" coords="5,5,236,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,28,236,28,236,23,270,23"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$interfaceFQLab_1_1IFreqDataReceiver.html" title="Enables the audio pipeline to export frequency data from within." alt="" coords="5,31,192,56"/>
+<area shape="rect" id="Node000001" href="$classFQLab_1_1FreqViewDataProcessor.html" title="Acts as a data sink for frequency data. Makes sure all data is in proper format for the graph view." alt="" coords="255,5,476,31"/>
+<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="205,31,254,26,255,31,206,36"/>
+<area shape="rect" id="Node000002" href="$classFQLabTests_1_1MockFreqDataReceiver.html" title=" " alt="" coords="240,55,491,80"/>
+<area shape="poly" id="edge19_Node000000_Node000002" title=" " alt="" coords="206,50,240,53,239,59,206,56"/>
+</map>

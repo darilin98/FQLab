@@ -1,0 +1,5 @@
+<map id="FQLab.AudioEngine.AudioConsumerProcess" name="FQLab.AudioEngine.AudioConsumerProcess">
+<area shape="rect" id="Node000001" title="Consumes processed data from the buffer and pushes it to the player." alt="" coords="5,5,260,45"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioPlayer.html#a72083c49d68725d7de41f35ba824f4ef" title="Receives the AudioFrame and plays it." alt="" coords="308,13,488,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,23,294,23,294,28,260,28"/>
+</map>

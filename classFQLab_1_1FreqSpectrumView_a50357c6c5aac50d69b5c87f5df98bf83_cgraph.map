@@ -1,0 +1,7 @@
+<map id="FQLab.FreqSpectrumView.UpdateData" name="FQLab.FreqSpectrumView.UpdateData">
+<area shape="rect" id="Node000001" title="Propagates data to graph only when the UI is ready for drawing." alt="" coords="5,35,276,60"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1FreqGraphView.html#a8217ff1aacbf8b1c694073f4f2775294" title="Draws a bar graph in real time." alt="" coords="324,5,571,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,32,310,28,310,34,274,37"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1FreqAxisView.html#a966be84c9beb47527ed914864804559a" title=" " alt="" coords="345,55,550,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="276,57,331,62,331,67,276,62"/>
+</map>

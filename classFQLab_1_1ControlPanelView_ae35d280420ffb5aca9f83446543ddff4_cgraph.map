@@ -1,0 +1,13 @@
+<map id="FQLab.ControlPanelView.ControlPanelView" name="FQLab.ControlPanelView.ControlPanelView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,236,160"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1UIController.html#adb5010f641a3f30192705f5f38a46351" title="Returns the current volume factor of the audio engine." alt="" coords="284,5,503,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,117,215,86,283,55,304,47,306,52,285,60,217,91,158,122"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1UIController.html#a98a69986bafd6bb05c2128fad8e68d77" title="Aborts the audio pipeline." alt="" coords="292,70,495,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,117,319,96,320,101,217,123"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1UIController.html#a20d7d71f299385c5119f51610b0a1ab5" title="Pauses the engine." alt="" coords="300,120,487,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,137,286,137,286,143,236,143"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1UIController.html#a32d90e7ecaddca8f890cdacdef5e497b" title="Resumes the engine." alt="" coords="293,184,494,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="207,157,295,178,294,184,206,163"/>
+<area shape="rect" id="Node000006" href="$classFQLab_1_1UIController.html#ac36ac3e9e17f5f923d577030f3b3345e" title="Takes volume selection and handles proper conversion for the engine." alt="" coords="296,248,491,288"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,158,212,196,285,234,304,241,302,246,283,238,210,200,150,163"/>
+</map>

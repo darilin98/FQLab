@@ -1,0 +1,5 @@
+<map id="FQLabTests.MockAudioStream.ReadFrame" name="FQLabTests.MockAudioStream.ReadFrame">
+<area shape="rect" id="Node000001" title="Request PCM samples from the file of given size." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000002" href="$namespaceFQLab.html#a7b2f30b69db5722f8e5226c476f40633" title="Couples together crucial audio stream metadata with float samples." alt="" coords="276,13,421,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,23,262,23,262,28,228,28"/>
+</map>

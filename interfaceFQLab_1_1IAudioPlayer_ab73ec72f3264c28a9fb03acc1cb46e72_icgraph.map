@@ -1,0 +1,5 @@
+<map id="FQLab.IAudioPlayer.Pause" name="FQLab.IAudioPlayer.Pause">
+<area shape="rect" id="Node000001" title="Pauses playback." alt="" coords="244,5,435,31"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1AudioEngine.html#a0477d39c648a99ec2e26e4f1e793df52" title="Pauses both processes." alt="" coords="5,5,196,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,21,196,21,196,15,230,15"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="FQLab.FreqViewDataProcessor" name="FQLab.FreqViewDataProcessor">
+<area shape="rect" id="Node000001" title="Acts as a data sink for frequency data. Makes sure all data is in proper format for the graph view." alt="" coords="56,536,269,781"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IFreqDataReceiver.html" title="Enables the audio pipeline to export frequency data from within." alt="" coords="5,388,195,453"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,466,133,535,128,536,109,467"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1FreqSpectrumView.html" title="Encapsulates views that display the frequency graphs. Takes care of their layout." alt="" coords="219,368,400,473"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,475,249,523,245,521,275,472"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="118,180,205,245"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="189,256,220,304,267,366,263,369,215,307,184,259"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1FreqGraphView.html" title=" " alt="" coords="229,120,390,305"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="312,306,312,351,307,351,307,306"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="378,5,425,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="380,84,361,121,356,119,376,81"/>
+<area shape="rect" id="Node000007" href="$classFQLab_1_1FreqAxisView.html" title=" " alt="" coords="414,170,575,255"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="427,82,474,168,470,171,423,84"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="470,257,439,301,402,346,389,359,385,355,398,342,435,298,466,254"/>
+</map>

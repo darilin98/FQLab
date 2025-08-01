@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$interfaceFQLab_1_1PluginContracts_1_1IAudioPlugin.html" title="Defines the contract for third party plugins." alt="" coords="5,23,220,63"/>
+<area shape="rect" id="Node000001" href="$classHallEcho_1_1HallEcho.html" title=" " alt="" coords="311,5,451,31"/>
+<area shape="poly" id="edge20_Node000000_Node000001" title=" " alt="" coords="233,29,311,22,311,27,234,35"/>
+<area shape="rect" id="Node000002" href="$classWobbleTremolo_1_1WobbleTremolo.html" title=" " alt="" coords="268,55,495,80"/>
+<area shape="poly" id="edge21_Node000000_Node000002" title=" " alt="" coords="234,51,268,55,268,60,233,57"/>
+</map>

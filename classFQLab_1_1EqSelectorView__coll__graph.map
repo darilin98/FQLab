@@ -1,0 +1,27 @@
+<map id="FQLab.EqSelectorView" name="FQLab.EqSelectorView">
+<area shape="rect" id="Node000001" title="Parent view of individual EQ selections. Accommodates ranges based on the engine&#39;s accepted setup." alt="" coords="50,1404,210,1489"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="7,648,54,713"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="26,727,14,838,8,993,11,1079,19,1168,35,1256,58,1340,74,1373,94,1402,89,1405,69,1376,53,1342,29,1257,14,1168,6,1079,3,993,9,838,21,727"/>
+<area shape="rect" id="Node000012" href="$classFQLab_1_1EqColumn.html" title="Singular EQ selection column for a specific range. Allows for cut/boost from &#45;5 to 5." alt="" coords="68,1156,193,1281"/>
+<area shape="poly" id="edge13_Node000012_Node000002" title=" " alt="" coords="34,727,42,864,52,949,68,1033,85,1096,107,1155,102,1157,80,1098,62,1034,47,950,37,865,29,727"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1UIController.html" title="A core class of the program&#39;s UI. Keeps the state of the AudioEngine and processes requests to it mad..." alt="" coords="218,1096,376,1341"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,1343,210,1382,198,1394,194,1391,206,1378,233,1340"/>
+<area shape="rect" id="Node000004" href="$interfaceFQLab_1_1IAudioEngineFactory.html" title="Factory interface that creates audio engines based on OS and AudioStream settings." alt="" coords="78,648,268,713"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,714,176,780,181,870,194,971,218,1071,221,1080,216,1081,213,1073,189,972,176,870,170,780,170,714"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1AudioEngine.html" title="Core class responsible for managing the state and playback of the currently selected track...." alt="" coords="292,328,526,1033"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="338,1034,328,1081,323,1079,333,1033"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="17,5,108,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="53,84,46,126,45,174,52,222,61,244,74,264,89,275,112,284,174,296,237,307,263,315,281,326,294,339,290,342,278,330,261,320,236,312,173,301,111,289,86,280,70,267,56,246,47,223,39,174,41,126,48,84"/>
+<area shape="rect" id="Node000007" href="$interfaceFQLab_1_1IAudioStream.html" title="Represents the decoded audio file. Enables on request fetching of data." alt="" coords="84,160,230,225"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="91,81,140,158,135,161,87,84"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="178,224,205,263,240,302,261,313,271,317,282,326,284,329,280,333,278,330,268,322,259,318,237,306,201,267,173,227"/>
+<area shape="rect" id="Node000008" href="$interfaceFQLab_1_1IFftProcessor.html" title="Provides methods for FFT operations." alt="" coords="255,150,398,235"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="336,235,349,311,344,312,331,236"/>
+<area shape="rect" id="Node000009" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="422,130,564,255"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="485,256,475,312,470,311,480,255"/>
+<area shape="rect" id="Node000010" href="$interfaceFQLab_1_1IFreqDataReceiver.html" title="Enables the audio pipeline to export frequency data from within." alt="" coords="588,160,777,225"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="667,227,536,459,531,456,662,224"/>
+<area shape="rect" id="Node000011" href="$structFQLab_1_1EqSettings.html" title="Immutable struct used for sending updated settings data from the GUI to the audio pipeline." alt="" coords="801,120,969,265"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="817,267,539,551,535,547,813,264"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="133,1282,133,1388,128,1388,128,1282"/>
+</map>

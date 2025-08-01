@@ -1,0 +1,5 @@
+<map id="FQLabTests.MockFftProcessor" name="FQLabTests.MockFftProcessor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,139,212,224"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IFftProcessor.html" title="Provides methods for FFT operations." alt="" coords="59,5,158,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,104,111,138,106,138,106,104"/>
+</map>

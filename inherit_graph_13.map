@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,100,105"/>
+<area shape="rect" id="Node000001" href="$classFQLab_1_1ControlPanelView.html" title="Stores all views that can communicate through the controller with the audio engine." alt="" coords="152,5,333,31"/>
+<area shape="poly" id="edge22_Node000000_Node000001" title=" " alt="" coords="85,70,147,40,182,28,184,33,149,44,87,75"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1FreqSpectrumView.html" title="Encapsulates views that display the frequency graphs. Takes care of their layout." alt="" coords="148,55,337,80"/>
+<area shape="poly" id="edge23_Node000000_Node000002" title=" " alt="" coords="113,82,148,77,148,83,114,87"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1Plugin.html" title=" " alt="" coords="189,104,296,129"/>
+<area shape="poly" id="edge24_Node000000_Node000003" title=" " alt="" coords="114,98,190,107,189,113,113,103"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1PluginListView.html" title="Displays installed plugin in a list. Enables on/off toggles." alt="" coords="161,153,324,179"/>
+<area shape="poly" id="edge25_Node000000_Node000004" title=" " alt="" coords="89,110,149,138,188,151,186,156,147,143,87,114"/>
+</map>

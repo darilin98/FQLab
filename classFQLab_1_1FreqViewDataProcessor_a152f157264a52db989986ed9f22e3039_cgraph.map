@@ -1,0 +1,11 @@
+<map id="FQLab.FreqViewDataProcessor.FreqViewDataProcessor" name="FQLab.FreqViewDataProcessor.FreqViewDataProcessor">
+<area shape="rect" id="Node000001" title="Starts graph refresh task." alt="" coords="5,27,229,67"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1FreqViewDataProcessor.html#ad0961d3d271efc95e4c517451a666e98" title=" " alt="" coords="277,27,501,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,45,264,45,264,50,229,50"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1FreqSpectrumView.html#a50357c6c5aac50d69b5c87f5df98bf83" title="Propagates data to graph only when the UI is ready for drawing." alt="" coords="549,35,820,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="502,45,536,45,536,50,502,50"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1FreqGraphView.html#a8217ff1aacbf8b1c694073f4f2775294" title="Draws a bar graph in real time." alt="" coords="868,5,1115,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="817,32,854,28,854,34,818,37"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1FreqAxisView.html#a966be84c9beb47527ed914864804559a" title=" " alt="" coords="889,55,1094,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="820,57,875,62,875,67,820,62"/>
+</map>

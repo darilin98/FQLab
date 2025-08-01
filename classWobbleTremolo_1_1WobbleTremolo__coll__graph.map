@@ -1,0 +1,5 @@
+<map id="WobbleTremolo.WobbleTremolo" name="WobbleTremolo.WobbleTremolo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,224,264"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1PluginContracts_1_1IAudioPlugin.html" title="Defines the contract for third party plugins." alt="" coords="67,5,162,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,84,117,118,112,118,112,84"/>
+</map>

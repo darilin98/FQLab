@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,104,60,129"/>
+<area shape="rect" id="Node000001" href="$classFQLab_1_1EqColumn.html" title="Singular EQ selection column for a specific range. Allows for cut/boost from &#45;5 to 5." alt="" coords="135,5,269,31"/>
+<area shape="poly" id="edge26_Node000000_Node000001" title=" " alt="" coords="50,91,75,64,107,40,134,28,136,33,109,44,78,68,54,95"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1EqSelectorView.html" title="Parent view of individual EQ selections. Accommodates ranges based on the engine&#39;s accepted setup." alt="" coords="118,55,286,80"/>
+<area shape="poly" id="edge27_Node000000_Node000002" title=" " alt="" coords="72,100,107,89,148,78,149,83,109,94,74,105"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1FreqAxisView.html" title=" " alt="" coords="125,104,279,129"/>
+<area shape="poly" id="edge28_Node000000_Node000003" title=" " alt="" coords="74,114,124,114,124,119,74,119"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1FreqGraphView.html" title=" " alt="" coords="119,153,285,179"/>
+<area shape="poly" id="edge29_Node000000_Node000004" title=" " alt="" coords="74,127,109,138,153,151,152,156,107,143,72,132"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1SimpleFileBrowser.html" title="Mouse&#45;enabled file explorer." alt="" coords="108,203,296,228"/>
+<area shape="poly" id="edge30_Node000000_Node000005" title=" " alt="" coords="54,139,79,165,109,188,138,200,136,205,107,192,75,169,50,142"/>
+</map>

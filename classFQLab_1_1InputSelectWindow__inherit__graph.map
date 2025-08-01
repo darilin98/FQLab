@@ -1,0 +1,5 @@
+<map id="FQLab.InputSelectWindow" name="FQLab.InputSelectWindow">
+<area shape="rect" id="Node000001" title="Initial window used to select a file to be decoded and played." alt="" coords="5,119,189,184"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="64,5,131,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,84,100,119,95,119,95,84"/>
+</map>

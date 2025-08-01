@@ -1,0 +1,5 @@
+<map id="FQLab.IAudioEngineFactory" name="FQLab.IAudioEngineFactory">
+<area shape="rect" id="Node000001" title="Factory interface that creates audio engines based on OS and AudioStream settings." alt="" coords="5,5,196,71"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1AudioEngineFactory.html" title="Creates audio engines based on user setups." alt="" coords="7,119,194,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,84,103,119,98,119,98,84"/>
+</map>

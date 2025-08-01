@@ -1,0 +1,7 @@
+<map id="FQLab.AudioEngine.Abort" name="FQLab.AudioEngine.Abort">
+<area shape="rect" id="Node000001" title="Force quits pipeline safely." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1AudioEngine.html#a6ac23ba675416fd3dea3b90bfdf4cc62" title="Resumes pipeline." alt="" coords="240,5,445,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,15,226,15,226,21,192,21"/>
+<area shape="rect" id="Node000003" href="$interfaceFQLab_1_1IAudioPlayer.html#a45c81488ced966fabafaca74a7a39419" title="Resumes playback." alt="" coords="493,5,699,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,15,479,15,479,21,446,21"/>
+</map>

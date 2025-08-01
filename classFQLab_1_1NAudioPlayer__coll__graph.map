@@ -1,0 +1,11 @@
+<map id="FQLab.NAudioPlayer" name="FQLab.NAudioPlayer">
+<area shape="rect" id="Node000001" title="Wrapper around the NAudio WaveOutEvent." alt="" coords="97,328,244,473"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="5,130,101,255"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,266,132,326,127,329,93,269"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="125,160,216,225"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,239,173,328,168,328,168,239"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1NAudioBufferedProvider.html" title="Custom buffer for the NAudioPlayer." alt="" coords="241,120,455,265"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,268,245,317,241,314,284,264"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="287,5,409,71"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="351,84,351,120,345,120,345,84"/>
+</map>

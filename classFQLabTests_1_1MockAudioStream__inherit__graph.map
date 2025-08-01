@@ -1,0 +1,7 @@
+<map id="FQLabTests.MockAudioStream" name="FQLabTests.MockAudioStream">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,232,216,377"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioStream.html" title="Represents the decoded audio file. Enables on request fetching of data." alt="" coords="54,119,167,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,198,113,231,108,231,108,198"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="65,5,156,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,84,113,119,108,119,108,84"/>
+</map>

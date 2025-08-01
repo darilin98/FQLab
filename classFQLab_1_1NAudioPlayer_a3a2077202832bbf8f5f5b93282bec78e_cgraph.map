@@ -1,0 +1,5 @@
+<map id="FQLab.NAudioPlayer.Dispose" name="FQLab.NAudioPlayer.Dispose">
+<area shape="rect" id="Node000001" title="Clean up after track has finished playing." alt="" coords="5,13,216,38"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1NAudioBufferedProvider.html#a483759fa9d39b927adffd5dbfe6bbdbb" title=" " alt="" coords="264,5,491,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,23,250,23,250,28,216,28"/>
+</map>

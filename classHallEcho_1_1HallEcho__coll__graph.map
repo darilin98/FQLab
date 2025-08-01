@@ -1,0 +1,5 @@
+<map id="HallEcho.HallEcho" name="HallEcho.HallEcho">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,137,304"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1PluginContracts_1_1IAudioPlugin.html" title="Defines the contract for third party plugins." alt="" coords="24,5,119,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,85,74,119,69,119,69,85"/>
+</map>

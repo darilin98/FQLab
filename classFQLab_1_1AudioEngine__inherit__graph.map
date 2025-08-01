@@ -1,0 +1,5 @@
+<map id="FQLab.AudioEngine" name="FQLab.AudioEngine">
+<area shape="rect" id="Node000001" title="Core class responsible for managing the state and playback of the currently selected track...." alt="" coords="5,119,239,784"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="77,5,167,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,84,125,118,119,118,119,84"/>
+</map>

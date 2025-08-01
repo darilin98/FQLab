@@ -1,0 +1,5 @@
+<map id="FQLab.AudioStreamWrapper.ReadFrame" name="FQLab.AudioStreamWrapper.ReadFrame">
+<area shape="rect" id="Node000001" title="Formats samples read by internal reader into consistent frames AudioFrame." alt="" coords="5,5,215,45"/>
+<area shape="rect" id="Node000002" href="$namespaceFQLab.html#a7b2f30b69db5722f8e5226c476f40633" title="Couples together crucial audio stream metadata with float samples." alt="" coords="263,13,408,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,23,249,23,249,28,215,28"/>
+</map>

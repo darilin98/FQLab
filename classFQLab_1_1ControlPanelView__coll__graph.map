@@ -1,0 +1,24 @@
+<map id="FQLab.ControlPanelView" name="FQLab.ControlPanelView">
+<area shape="rect" id="Node000001" title="Stores all views that can communicate through the controller with the audio engine." alt="" coords="43,1404,216,1469"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="65,1186,151,1251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,1265,129,1404,124,1404,110,1265"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1UIController.html" title="A core class of the program&#39;s UI. Keeps the state of the AudioEngine and processes requests to it mad..." alt="" coords="175,1096,334,1341"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,1343,158,1391,154,1388,182,1340"/>
+<area shape="rect" id="Node000004" href="$interfaceFQLab_1_1IAudioEngineFactory.html" title="Factory interface that creates audio engines based on OS and AudioStream settings." alt="" coords="66,648,257,713"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="166,713,181,868,195,970,213,1071,215,1079,210,1081,208,1073,190,970,176,869,161,714"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1AudioEngine.html" title="Core class responsible for managing the state and playback of the currently selected track...." alt="" coords="281,328,514,1033"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="333,1034,321,1073,318,1081,313,1080,316,1071,328,1033"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,5,96,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="41,84,34,126,33,174,41,222,50,244,62,264,77,275,101,284,162,296,225,307,251,315,270,326,282,339,278,342,266,330,249,320,224,312,161,301,99,289,75,280,58,267,45,246,36,223,28,174,29,126,36,84"/>
+<area shape="rect" id="Node000007" href="$interfaceFQLab_1_1IAudioStream.html" title="Represents the decoded audio file. Enables on request fetching of data." alt="" coords="72,160,219,225"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="80,81,128,158,123,161,75,84"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="166,224,193,263,228,302,249,313,259,317,270,326,272,329,268,333,266,330,257,322,247,318,225,306,189,267,162,227"/>
+<area shape="rect" id="Node000008" href="$interfaceFQLab_1_1IFftProcessor.html" title="Provides methods for FFT operations." alt="" coords="243,150,386,235"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="324,235,337,311,332,312,319,236"/>
+<area shape="rect" id="Node000009" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="411,130,552,255"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="473,256,464,312,458,311,468,255"/>
+<area shape="rect" id="Node000010" href="$interfaceFQLab_1_1IFreqDataReceiver.html" title="Enables the audio pipeline to export frequency data from within." alt="" coords="576,160,765,225"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="655,227,525,459,520,456,651,224"/>
+<area shape="rect" id="Node000011" href="$structFQLab_1_1EqSettings.html" title="Immutable struct used for sending updated settings data from the GUI to the audio pipeline." alt="" coords="789,120,957,265"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="805,267,527,551,523,547,801,264"/>
+</map>

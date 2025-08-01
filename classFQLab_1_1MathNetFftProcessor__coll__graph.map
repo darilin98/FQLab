@@ -1,0 +1,5 @@
+<map id="FQLab.MathNetFftProcessor" name="FQLab.MathNetFftProcessor">
+<area shape="rect" id="Node000001" title="Wraps the FFT from Math.NET." alt="" coords="5,139,200,224"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IFftProcessor.html" title="Provides methods for FFT operations." alt="" coords="53,5,152,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,104,105,138,100,138,100,104"/>
+</map>

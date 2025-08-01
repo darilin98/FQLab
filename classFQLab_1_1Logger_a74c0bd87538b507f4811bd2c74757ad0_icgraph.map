@@ -1,0 +1,11 @@
+<map id="FQLab.Logger.Log" name="FQLab.Logger.Log">
+<area shape="rect" id="Node000001" title=" " alt="" coords="531,55,668,80"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1AudioEngine.html#a6c0df2b1958169af3fb874fc078139c7" title="Safely gets rid of the engine when stream runs out." alt="" coords="265,5,469,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="527,54,482,45,429,33,430,28,483,39,528,49"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1PluginLoader.html#aa0bdd98ca58a9a5d17a2fdbc0e07ef02" title="Scans the specified directory for .dll files." alt="" coords="251,55,483,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="517,70,483,70,483,65,517,65"/>
+<area shape="rect" id="Node000005" href="$classFQLab_1_1Program.html#aafb52754669fb93551a41a572edf9379" title=" " alt="" coords="287,104,446,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="526,85,428,107,427,101,525,80"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1AudioEngineFactory.html#a09323dec867f7fc59773ec6116147120" title="Creates an engine with a stream injected in order for their lifespans to match." alt="" coords="5,47,203,87"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,70,203,70,203,65,237,65"/>
+</map>

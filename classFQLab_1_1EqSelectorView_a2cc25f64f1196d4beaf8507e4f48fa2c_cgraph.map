@@ -1,0 +1,7 @@
+<map id="FQLab.EqSelectorView.AggregateEq" name="FQLab.EqSelectorView.AggregateEq">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,260,31"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1UIController.html#aeadc67f1257cc7b679ee59f17f5d48bd" title="Pushes EQ changes to the audio engine." alt="" coords="308,5,519,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,15,294,15,294,21,260,21"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1AudioEngine.html#ae30443430132e6ca90fcd4534caa109e" title="Updates EQ settings based on received data." alt="" coords="567,5,756,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="519,15,553,15,553,21,519,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FQLab.LoggerAudioPlayer" name="FQLab.LoggerAudioPlayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,179,187,304"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="48,5,144,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,145,99,178,93,178,93,145"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FQLabTests.MockAudioPlayer" name="FQLabTests.MockAudioPlayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,179,211,304"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="60,5,156,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,145,111,178,105,178,105,145"/>
+</map>

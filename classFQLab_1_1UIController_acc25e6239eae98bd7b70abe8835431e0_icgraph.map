@@ -1,0 +1,7 @@
+<map id="FQLab.UIController.StartPlayback" name="FQLab.UIController.StartPlayback">
+<area shape="rect" id="Node000001" title="Manages lifetime of an audioStream and an audioEngine. Waits for all tasks on the engine to finish." alt="" coords="515,5,693,45"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1UIController.html#ab3b6e41bd3cc9b49d55e792a83ed9112" title="Takes a file and if successful starts the audio pipeline." alt="" coords="248,13,467,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="501,28,467,28,467,23,501,23"/>
+<area shape="rect" id="Node000003" href="$classFQLab_1_1InputSelectWindow.html#a7b6e303385f67952abdbcd71922d307a" title=" " alt="" coords="5,5,200,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,28,200,28,200,23,234,23"/>
+</map>

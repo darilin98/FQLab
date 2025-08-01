@@ -1,0 +1,27 @@
+<map id="FQLab.AudioEngine.AudioProducerProcess" name="FQLab.AudioEngine.AudioProducerProcess">
+<area shape="rect" id="Node000001" title="Core audio pipeline. Consumes data from the _audioStream and processes them. Pushes the result into a..." alt="" coords="5,290,252,330"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1AudioEngine.html#a07d9843951c96adbaa84ae9bbb264550" title=" " alt="" coords="315,5,521,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,289,154,238,188,170,236,99,265,67,298,40,307,34,310,39,302,44,269,71,240,102,192,172,159,240,139,291"/>
+<area shape="rect" id="Node000003" href="$namespaceFQLab.html#a7b2f30b69db5722f8e5226c476f40633" title="Couples together crucial audio stream metadata with float samples." alt="" coords="345,55,491,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,289,160,246,195,192,242,136,269,111,299,89,331,75,333,80,301,94,272,115,246,139,200,195,165,249,142,291"/>
+<area shape="rect" id="Node000004" href="$interfaceFQLab_1_1IFftProcessor.html#a8950d12b6e8c3f31e9b5bb14c60fb210" title="Performs forward FFT on an AudioFrame." alt="" coords="315,104,521,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,288,168,255,204,214,248,173,299,138,314,131,316,136,301,143,252,177,208,217,172,258,146,291"/>
+<area shape="rect" id="Node000005" href="$namespaceFQLab.html#a2e96c171ac1206d46d6217888d9c8576" title="Holds results of FFT. Data about current frequency distribution of the audio stream." alt="" coords="339,153,497,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,288,214,238,255,211,299,189,324,180,326,185,301,194,258,216,218,242,154,292"/>
+<area shape="rect" id="Node000006" href="$classFQLab_1_1AudioEngine.html#a038cb462e781b9da7b42989345597b1f" title=" " alt="" coords="309,203,527,243"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="190,287,299,253,328,244,329,250,301,258,191,292"/>
+<area shape="rect" id="Node000007" href="$interfaceFQLab_1_1IFftProcessor.html#a6e5bf52d9f11afcd65c8f9483d4cc7db" title="Performs inverse FFT on an array of frequency bins." alt="" coords="317,268,519,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="252,295,302,290,303,295,253,300"/>
+<area shape="rect" id="Node000008" href="$classFQLab_1_1AudioEngine.html#abbb18dc1af0c92f840492ad9e9cb96b5" title=" " alt="" coords="305,318,531,358"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="253,319,292,323,291,328,252,325"/>
+<area shape="rect" id="Node000009" href="$classFQLab_1_1AudioEngine.html#a61688012ace5f0dccb66a436d9d5bce1" title=" " alt="" coords="317,382,519,422"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="185,328,301,367,328,376,326,381,299,373,183,333"/>
+<area shape="rect" id="Node000010" href="$interfaceFQLab_1_1IAudioStream.html#a70afd6ce014bd208435f477f36096bfb" title="Request PCM samples from the file of given size." alt="" coords="301,447,535,472"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="153,328,216,380,257,408,301,432,325,440,323,445,299,436,255,413,213,385,150,332"/>
+<area shape="rect" id="Node000011" href="$interfaceFQLab_1_1IFreqDataReceiver.html#a518c2f820c2af495846f497b5a147914" title="Used by pipeline after performing forward FFT. Data intended for graph visualizing." alt="" coords="323,497,513,537"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="146,329,208,403,252,445,301,481,317,489,314,494,299,486,249,449,204,407,142,332"/>
+<area shape="rect" id="Node000012" href="$classFQLab_1_1AudioEngine.html#ace910ecafa8641756d3e1e90bea0e429" title=" " alt="" coords="300,561,536,587"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="141,329,162,375,197,434,243,496,271,523,301,546,314,554,312,558,299,551,268,527,239,499,192,437,158,377,136,331"/>
+<area shape="rect" id="Node000013" href="$classFQLab_1_1AudioEngine.html#a2458645f0dfcfba84d0d14b2dbc3b315" title=" " alt="" coords="305,611,531,636"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="138,329,157,384,190,457,212,495,238,532,268,567,302,596,312,602,309,607,298,600,264,570,233,536,207,498,185,459,152,386,133,331"/>
+</map>

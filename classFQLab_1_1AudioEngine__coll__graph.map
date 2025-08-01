@@ -1,0 +1,16 @@
+<map id="FQLab.AudioEngine" name="FQLab.AudioEngine">
+<area shape="rect" id="Node000001" title="Core class responsible for managing the state and playback of the currently selected track...." alt="" coords="281,328,514,1033"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,96,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,85,45,170,50,218,63,264,82,309,105,353,160,435,221,510,282,574,278,578,217,514,156,439,101,355,77,311,57,266,45,219,39,170,42,84"/>
+<area shape="rect" id="Node000003" href="$interfaceFQLab_1_1IAudioStream.html" title="Represents the decoded audio file. Enables on request fetching of data." alt="" coords="72,160,219,225"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="80,81,128,158,123,161,75,84"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,224,275,438,270,441,159,227"/>
+<area shape="rect" id="Node000004" href="$interfaceFQLab_1_1IFftProcessor.html" title="Provides methods for FFT operations." alt="" coords="243,150,386,235"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="324,235,337,311,332,312,319,236"/>
+<area shape="rect" id="Node000005" href="$interfaceFQLab_1_1IAudioPlayer.html" title="Final component of the audio pipeline. Responsible for playing samples on an audio source." alt="" coords="411,130,552,255"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="473,256,464,312,458,311,468,255"/>
+<area shape="rect" id="Node000006" href="$interfaceFQLab_1_1IFreqDataReceiver.html" title="Enables the audio pipeline to export frequency data from within." alt="" coords="576,160,765,225"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="655,227,525,459,520,456,651,224"/>
+<area shape="rect" id="Node000007" href="$structFQLab_1_1EqSettings.html" title="Immutable struct used for sending updated settings data from the GUI to the audio pipeline." alt="" coords="789,120,957,265"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="805,267,527,551,523,547,801,264"/>
+</map>

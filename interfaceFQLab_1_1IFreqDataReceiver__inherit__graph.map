@@ -1,0 +1,7 @@
+<map id="FQLab.IFreqDataReceiver" name="FQLab.IFreqDataReceiver">
+<area shape="rect" id="Node000001" title="Enables the audio pipeline to export frequency data from within." alt="" coords="143,5,332,71"/>
+<area shape="rect" id="Node000002" href="$classFQLab_1_1FreqViewDataProcessor.html" title="Acts as a data sink for frequency data. Makes sure all data is in proper format for the graph view." alt="" coords="5,119,219,384"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,84,192,120,188,117,209,81"/>
+<area shape="rect" id="Node000003" href="$classFQLabTests_1_1MockFreqDataReceiver.html" title=" " alt="" coords="243,219,485,284"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,81,347,217,343,220,261,84"/>
+</map>

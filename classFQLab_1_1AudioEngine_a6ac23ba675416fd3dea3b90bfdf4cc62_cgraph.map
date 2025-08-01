@@ -1,0 +1,5 @@
+<map id="FQLab.AudioEngine.Resume" name="FQLab.AudioEngine.Resume">
+<area shape="rect" id="Node000001" title="Resumes pipeline." alt="" coords="5,5,211,31"/>
+<area shape="rect" id="Node000002" href="$interfaceFQLab_1_1IAudioPlayer.html#a45c81488ced966fabafaca74a7a39419" title="Resumes playback." alt="" coords="259,5,464,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,15,245,15,245,21,211,21"/>
+</map>

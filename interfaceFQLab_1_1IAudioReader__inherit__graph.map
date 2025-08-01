@@ -1,0 +1,9 @@
+<map id="FQLab.IAudioReader" name="FQLab.IAudioReader">
+<area shape="rect" id="Node000001" title="Abstracts readers to be used inside IAudioStream." alt="" coords="58,119,205,184"/>
+<area shape="rect" id="Node000004" href="$classFQLab_1_1NAudioReaderAdapter.html" title="Helper class that retypes the external NAudioReader to the project specific IAudioReader." alt="" coords="30,232,233,377"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,198,134,231,129,231,129,198"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,127,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,81,115,117,110,120,89,84"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="151,5,242,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,84,152,120,148,117,169,81"/>
+</map>
