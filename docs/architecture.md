@@ -2,7 +2,7 @@
 
 The core of this project is an *audio pipeline* separated into 3 parts:
 
-    - Fetching samples -> Processing (applying settings and effects) -> Outputing modified samples
+    - Fetching samples -> Processing (applying settings and effects) -> Outputting modified samples
 
 Above this pipeline exists a *GUI* which interacts with the *Processing* by changing its settings and visualizing its outputs.
 

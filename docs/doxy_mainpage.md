@@ -37,8 +37,8 @@ Visit [architecture.md](architecture.md) for more details.
 - `Windows OS`
 - `Terminal with unicode support`
 - [`Terminal.Gui`](https://github.com/gui-cs/Terminal.Gui)
-- ['Math.NET'](https://numerics.mathdotnet.com/)
-- ['NAudio'](https://github.com/naudio/NAudio)
+- [`Math.NET`](https://numerics.mathdotnet.com/)
+- [`NAudio`](https://github.com/naudio/NAudio)
 
 ## User Guide
 
