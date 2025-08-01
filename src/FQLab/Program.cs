@@ -19,6 +19,7 @@ class Program
             var controller = new UIController(new AudioEngineFactory());
             var inputWin = new InputSelectWindow(controller);
             Application.Run(inputWin);
+            Application.Shutdown();
         }
         catch (Exception e)
         {
